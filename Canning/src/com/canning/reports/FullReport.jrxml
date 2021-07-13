@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="058c20ce-929c-472c-8e62-224da2f0cbd1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Datasetter" uuid="793b13cc-40c6-472f-9247-68848c391f88">
+		<parameter name="thue" class="java.lang.Integer" isForPrompting="false"/>
+		<queryString>
+			<![CDATA[SELECT voucher_no,Production_ID,date,product,manpower,IngCost,RawCost,CanCost,LabelCost,EleCost,FuelCost,ManCost,Cperunit,quantity,waste_amount FROM new_view
+where factory ='f2' and date between '2018-07-01' and '2018-07-17'
+group by Production_ID]]>
+		</queryString>
+		<field name="voucher_no" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Production_ID" class="java.lang.Long">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="product" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="manpower" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="IngCost" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="RawCost" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="CanCost" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="LabelCost" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="EleCost" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="FuelCost" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="ManCost" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Cperunit" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="quantity" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="waste_amount" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="thuo" class="java.lang.Integer" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT voucher_no,Production_ID,date,product,manpower,IngCost,RawCost,CanCost,LabelCost,EleCost,FuelCost,ManCost,Cperunit,quantity,waste_amount FROM new_view
+where factory='f2' and date between '2018-07-01' and '2018-07-09'
+group by Production_ID]]>
+	</queryString>
+	<field name="voucher_no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Production_ID" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="manpower" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IngCost" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RawCost" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CanCost" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LabelCost" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EleCost" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FuelCost" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ManCost" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cperunit" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="waste_amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="97" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="114" height="90" uuid="ab94902b-4b8b-440c-b589-99185c7eb9fa"/>
+				<imageExpression><![CDATA["C:\\Program Files\\Cost\\ncf.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="255" y="10" width="308" height="31" uuid="622bafd0-7eab-4067-9b03-29da7f14bae4"/>
+				<textElement>
+					<font size="20" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[NJORO CANNING FACTORY (K)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="41" width="145" height="33" uuid="f7fd8921-c9f6-43b1-97e0-34cca2e06bc5"/>
+				<textElement>
+					<font size="20" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Cost Analysis]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="702" y="10" width="100" height="20" uuid="d2b21c80-8089-4b1e-8a38-88d88d3848bd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="99" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="0" width="802" height="80" uuid="44fa3152-a759-413e-aec2-a027f45a3b67"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="New Datasetter" uuid="a158292a-dab3-434e-853a-5ba216ae8b69">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="65" uuid="2215c8b9-a2f4-4b81-a5b8-2d3212b5879a">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="45" height="30" uuid="8f05437b-3bb7-4de9-b1f0-7ff944448d89"/>
+								<text><![CDATA[PID]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="65" height="20" uuid="651bac44-c75d-47d9-889a-c4fa6e68299a"/>
+								<textFieldExpression><![CDATA[$F{Production_ID}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="97" uuid="0b174ddd-ae23-4cf3-b1a9-45fb88b9a5a1">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="72" height="30" uuid="a660eb0e-f975-4ef4-8207-3dee7abac9ec"/>
+								<text><![CDATA[Date]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="97" height="20" uuid="592cdc1d-e1b6-497f-8fb4-74ed070a2df8"/>
+								<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="158" uuid="9956a41b-d3bc-4886-a48f-f33379e42b01">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="fd581002-1470-4b1d-b561-2c2fd27b7152"/>
+								<text><![CDATA[Product]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="158" height="20" uuid="4f3a577a-9793-4de5-9e3c-6b2cf43e9b9b"/>
+								<textFieldExpression><![CDATA[$F{product}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="58" uuid="ec0d1d44-d98d-417f-b99f-cfacac3b1870">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="42" height="30" uuid="5a81ada3-845a-43af-9702-2954be9ea44c"/>
+								<text><![CDATA[IngCost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="58" height="20" uuid="f1d34c3d-39e0-4912-94c9-bc571e85f893"/>
+								<textFieldExpression><![CDATA[$F{IngCost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="54" uuid="1f54a90b-6619-4c1c-8bc4-a6381b55d6e2">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="30" uuid="1db0f83a-4001-46da-bf2a-16b44e1b6578"/>
+								<text><![CDATA[RawCost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="54" height="20" uuid="bd45e05c-78bf-4f51-9194-b90767321703"/>
+								<textFieldExpression><![CDATA[$F{RawCost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="d389cee3-cae4-4537-9792-d8d4947afea8">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="30" uuid="2fa4b7ed-184d-425c-9567-89e5d889ec44"/>
+								<text><![CDATA[CanCost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="20" uuid="e9f2cb8b-d5fc-4503-b798-3e3293e873f8"/>
+								<textFieldExpression><![CDATA[$F{CanCost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="48" uuid="135c1cbc-3385-4cef-a3ae-07ba598151cf">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="30" uuid="9fd60fbf-16c5-47d4-9922-c3d378761076"/>
+								<text><![CDATA[LabelCost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="20" uuid="58e9975c-c01b-496d-b01f-34153a70ac7a"/>
+								<textFieldExpression><![CDATA[$F{LabelCost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="47" uuid="d5f1c50a-007c-417f-a450-fd08ee9ac653">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="30" uuid="dec81a30-2b45-4431-be25-05b2c3723a52"/>
+								<text><![CDATA[EleCost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="20" uuid="7706f60d-9766-40d9-9f86-2e0b676bcd8a"/>
+								<textFieldExpression><![CDATA[$F{EleCost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="49" uuid="9e4b9f43-be73-4e71-8797-784e95e92339">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="47" height="30" uuid="dd111c52-0434-442b-a939-6cc45ee3bd74"/>
+								<text><![CDATA[FuelCost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="47" height="20" uuid="0cae853a-8f3f-43e0-81fb-2628adb5bd2c"/>
+								<textFieldExpression><![CDATA[$F{FuelCost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="9e5682a1-2260-413d-9bd7-99c496f7ae4a">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="44" height="30" uuid="f6417597-3030-493d-aee2-3372363a20c4"/>
+								<text><![CDATA[ManCost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="44" height="20" uuid="f3413284-fe2b-41c8-a3bf-b5f92be67b1b"/>
+								<textFieldExpression><![CDATA[$F{ManCost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="56" uuid="bcf4a07d-854c-4d1a-af8d-81cf8213f192">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="56" height="30" uuid="bd73b297-1c37-4627-8007-9ea785d17fae"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Cperunit]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="56" height="20" uuid="6f61b6ac-0527-47ec-938e-b805219e7fd1"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Cperunit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="59" uuid="319fdcfb-f576-49f7-b9ca-22c84c4f31f1">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="57" height="30" uuid="46c13a7a-641d-47fd-b29e-e5397369daeb"/>
+								<text><![CDATA[Quantity]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="57" height="20" uuid="941cb1de-88a6-4311-b76d-0a227857fc21"/>
+								<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

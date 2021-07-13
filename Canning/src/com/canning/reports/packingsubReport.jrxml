@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="packingsubReport" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="32e75575-4b85-4163-98f0-fbcb06b556c6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="packsuset" uuid="ab764e5f-44fc-4656-ad5f-2113ae4be846">
+		<parameter name="spar1" class="java.lang.Long"/>
+		<queryString>
+			<![CDATA[SELECT 
+        `packed_product`.`packed_productid` AS `PackID`,
+        `packed_product`.`date` AS `date`,
+        `packed_product`.`factory` AS `factory`,
+        `packed_product`.`packed_product` AS `packedproduct`,
+        `packed_product`.`packed_qty` AS `packedqty`,
+        `packed_product`.`manpower_hrs` AS `manpower_hrs`,
+        `packing_consumed`.`item_name` AS `consumedproduct`,
+        `new_view`.`Cperunit` AS `consumedprice`,
+        (`packing_consumed`.`item_qty` * `new_view`.`Cperunit`) AS `consumedamount`,
+        `packing_consumed`.`item_qty` AS `consumedqty`,
+        `packing_consumed`.`consumed_id` AS `ProductionID`, 
+        `packing_package`.`package` AS `package`,
+        `packing_package`.`label` AS `label`,
+        `packing_package`.`package_qty` AS `packageqty`,
+        `packing_package`.`label_qty` AS `labelqty`,
+        (`product`.`kgsperpc` * `packing_consumed`.`item_qty`) AS `quantityKGS`
+    FROM
+        ((((`packed_product`
+        LEFT JOIN `product` ON ((`packed_product`.`packed_product` = CONVERT( `product`.`product_name` USING UTF8MB4))))
+        LEFT JOIN `packing_consumed` ON ((`packed_product`.`packed_productid` = `packing_consumed`.`pprodid`)))
+        LEFT JOIN `new_view` ON ((`new_view`.`Production_ID` = `packing_consumed`.`consumed_id`)))
+        LEFT JOIN `packing_package` ON ((`packed_product`.`packed_productid` = `packing_package`.`ref_packid`)))
+    GROUP BY `packed_product`.`packed_productid`]]>
+		</queryString>
+		<field name="ProductionID" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="packedproduct" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="packedqty" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="consumedproduct" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="consumedprice" class="java.lang.Double"/>
+		<field name="consumedamount" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="consumedqty" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="packamount" class="java.lang.Double"/>
+		<field name="labamount" class="java.lang.Double"/>
+		<field name="quantityKGS" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="manpower" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="spar" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[SELECT 
+        `packed_product`.`packed_productid` AS `PackID`,
+        `packed_product`.`date` AS `date`,
+        `packed_product`.`factory` AS `factory`,
+        `packed_product`.`packed_product` AS `packedproduct`,
+        `packed_product`.`packed_qty` AS `packedqty`,
+        `packed_product`.`manpower_hrs` AS `manpower_hrs`,
+        `packing_consumed`.`item_name` AS `consumedproduct`,
+        `new_view`.`Cperunit` AS `consumedprice`,
+        (`packing_consumed`.`item_qty` * `new_view`.`Cperunit`) AS `consumedamount`,
+        `packing_consumed`.`item_qty` AS `consumedqty`,
+        `packing_consumed`.`consumed_id` AS `ProductionID`, 
+        `packing_package`.`package` AS `package`,
+        `packing_package`.`label` AS `label`,
+        `packing_package`.`package_qty` AS `packageqty`,
+        `packing_package`.`label_qty` AS `labelqty`,
+        (`product`.`kgsperpc` * `packing_consumed`.`item_qty`) AS `quantityKGS`
+    FROM
+        ((((`packed_product`
+        LEFT JOIN `product` ON ((`packed_product`.`packed_product` = CONVERT( `product`.`product_name` USING UTF8MB4))))
+        LEFT JOIN `packing_consumed` ON ((`packed_product`.`packed_productid` = `packing_consumed`.`pprodid`)))
+        LEFT JOIN `new_view` ON ((`new_view`.`Production_ID` = `packing_consumed`.`consumed_id`)))
+        LEFT JOIN `packing_package` ON ((`packed_product`.`packed_productid` = `packing_package`.`ref_packid`)))
+    GROUP BY `packed_product`.`packed_productid`]]>
+	</queryString>
+	<field name="ProductionID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PackID" class="java.lang.Long"/>
+	<field name="packedproduct" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="packedqty" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="consumedproduct" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="consumedprice" class="java.lang.Double"/>
+	<field name="consumedamount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="consumedqty" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="packamount" class="java.lang.Double"/>
+	<field name="labamount" class="java.lang.Double"/>
+	<field name="quantityKGS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="manpower" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="0" y="0" width="270" height="80" uuid="80a2e68a-2fd7-41d4-a419-326c5d68e1ee"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="packsuset" uuid="9632f638-3dbb-4105-b3d6-29438f840880">
+						<datasetParameter name="spar1">
+							<datasetParameterExpression><![CDATA[$P{spar}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="46" uuid="693e5dd0-e915-4dca-8243-62114477d47c">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="43" height="30" uuid="660f9497-cb6b-403d-9869-b8d3c2d4f781"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[PID]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="43" height="20" uuid="24e0eb2a-c154-4300-961f-a375b44b24e8"/>
+								<textFieldExpression><![CDATA[$F{ProductionID}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="99" uuid="f9883b92-0664-479f-a43e-c7cb42577663">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="99" height="30" uuid="0ec03809-efca-44ee-9392-758110aa9c5b"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Consumed Product]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="99" height="20" uuid="c317355a-a414-4e61-b269-8bcc60a2f6a6"/>
+								<textFieldExpression><![CDATA[$F{consumedproduct}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="62" uuid="15c40553-eb6e-4e79-8f61-de36302fdce2">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="61" height="30" uuid="3fda9bb2-ba79-47ea-a0ad-bfc2dde2b46c"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Consumed Qty]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="61" height="20" uuid="2125b85f-3b85-40eb-a9b6-8c3ac10529fb"/>
+								<textFieldExpression><![CDATA[$F{consumedqty}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="57" uuid="378c8fb3-7191-449c-ade5-60f09de7b56e">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="30" uuid="e8155b59-4ec1-4858-8c17-08c1477c8fdd"/>
+								<textElement>
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Manpower(Hrs)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="55" height="20" uuid="8cdee750-8ec1-4fd1-a95f-67009775db05"/>
+								<textFieldExpression><![CDATA[$F{manpower}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="packrptnw" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e7f6757-eedb-4613-ac7c-6fcc7c89f242">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Canning"/>
+	<parameter name="maParameter" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:\\Program Files\\Cost\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+        `packed_product`.`packed_productid` AS `packed_productid`,
+        `packed_product`.`date` AS `date`,
+        `packed_product`.`factory` AS `factory`,
+        `packed_product`.`packed_product` AS `packed_product`,
+        `packed_product`.`packed_qty` AS `packed_qty`,
+        `packed_product`.`manpower_hrs` AS `manpower_hrs`,
+        `packing_consumed`.`consumed_id` AS `consumed_id`,
+        `packing_consumed`.`item_name` AS `item_name`,
+        `packing_consumed`.`item_qty` AS `item_qty`,
+        `packing_package`.`package` AS `package`,
+        `packing_package`.`package_qty` AS `package_qty`,
+        `packing_package`.`label` AS `label`,
+        `packing_package`.`label_qty` AS `label_qty`
+    FROM
+        ((`packed_product`
+        LEFT JOIN `packing_consumed` ON ((`packing_consumed`.`pprodid` = `packed_product`.`packed_productid`)))
+        LEFT JOIN `packing_package` ON (((`packed_product`.`packed_productid` = `packing_package`.`ref_packid`)
+            AND (`packing_package`.`ref_packid` = `packing_consumed`.`pprodid`))))
+            where `packed_product`.`packed_productid` = '5'
+    GROUP BY `packed_product`.`packed_productid`]]>
+	</queryString>
+	<field name="packed_productid" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="packed_productid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="packed_product"/>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="packed_product"/>
+	</field>
+	<field name="factory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="factory"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="packed_product"/>
+	</field>
+	<field name="packed_product" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="packed_product"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="packed_product"/>
+	</field>
+	<field name="packed_qty" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="packed_qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="packed_product"/>
+	</field>
+	<field name="manpower_hrs" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="manpower_hrs"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="packed_product"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="188" y="37" width="173" height="33" uuid="bbda89bb-5943-4fec-a473-746e2f040cf1"/>
+				<textElement>
+					<font size="20" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Packing Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="94" height="70" uuid="086904df-ed1f-439e-bd0e-707f6dcd831e"/>
+				<imageExpression><![CDATA["C:\\Program Files\\Cost\\ncf.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="110" y="0" width="308" height="31" uuid="922cdf08-3e05-4f95-bd18-a4496266b665"/>
+				<textElement>
+					<font size="20" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[NJORO CANNING FACTORY (K)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="62" splitType="Stretch">
+			<textField>
+				<reportElement x="55" y="0" width="115" height="20" uuid="b309a421-4e23-458e-9cde-4fbbd56ca38a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="55" height="20" uuid="5619ca46-dbe3-4796-a56c-ec45e90d02d0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="309" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="4" width="158" height="20" uuid="fcbbb374-911e-4971-8824-6b024c335d64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{packed_product}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="4" width="100" height="20" uuid="ab9a9eed-13dc-4ea7-85da-dd42b43dc2af"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Packed Product]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="25" width="100" height="20" uuid="dfceb45c-1aca-48be-a849-252658168526"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="25" width="158" height="20" uuid="f0db839b-ab4d-4d96-8690-6574c48de771"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{packed_qty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="282" y="4" width="154" height="20" uuid="3580d460-6961-4d73-a82a-48e46a56b671"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PackID:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="24" width="154" height="20" uuid="8cdb9764-5773-4430-a0a3-3f751707ffdd"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{packed_productid}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-10" y="54" width="570" height="246" uuid="311b1996-c8a8-4d54-9cab-b2a450d2b9ad"/>
+				<subreportParameter name="maParameter">
+					<subreportParameterExpression><![CDATA[$F{packed_productid}.intValue()]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} +"consubrpt.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="450" y="10" width="100" height="20" uuid="1be7aa36-9e30-45c9-ac89-f22148310aaf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="10" width="70" height="20" uuid="868d89b4-b001-4a48-b1c8-dea670f8a7a1"/>
+				<text><![CDATA[Generated On:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="10" width="100" height="30" uuid="738268c3-3acf-4390-9699-e58b3ff7b033"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="250" y="10" width="100" height="30" uuid="0cce18e1-a74d-4d99-821e-ef1cb54789d8"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

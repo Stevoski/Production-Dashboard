@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12a97451-f640-464f-9fb1-d6ceb0f3e7a9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="e8cd2041-c60e-4770-a3ca-4f1ec271bcb5"/>
+	<subDataset name="Table" uuid="47d59fa6-8328-4c3a-9126-6082277776f3">
+		<queryString>
+			<![CDATA[SELECT 
+        `costingprodn`.`voucher_no` AS `voucher_no`,
+        `costingprodn`.`production_id` AS `production_id`,
+        `prodpriceinclusive`.`date` AS `date`,
+        `prodpriceinclusive`.`factory` AS `factory`,
+        `prodpriceinclusive`.`groupe` AS `groupe`,
+        `prodpriceinclusive`.`product_name` AS `product_name`,
+        `prodpriceinclusive`.`quantity` AS `quantity`,
+        `prodpriceinclusive`.`quantityKGS` AS `quantityKGS`,
+        `costingprodn`.`electricity` AS `electricity`,
+        `costingprodn`.`can_name` AS `can`,
+`costingprodn`.`no_of_cans` AS `no of can`,
+        `costingprodn`.`label_name` AS `label`,
+`costingprodn`.`no_of_labels` AS `no of labels`,
+        `prodpriceinclusive`.`manpower_hrs` AS `manpower_hrs`,
+        `costingprodn`.`fuel` AS `fuel`,
+        `ingredpriceinc`.`ingredient_name` AS `ingredient`,
+        `ingredpriceinc`.`ingredient_qty` AS `ing_qty`,
+        `ingredpriceinc`.`amount` AS `amount`,
+        `rawmatpriceinc`.`raw_material` AS `raw_material`,
+        `rawmatpriceinc`.`qty` AS `raw_material_qty`,
+        `rawmatpriceinc`.`amount` AS `raw_material_amount`
+    FROM
+        (((`costingprodn`
+        LEFT JOIN `prodpriceinclusive` ON (((`prodpriceinclusive`.`voucher_no` = `costingprodn`.`voucher_no`)
+            AND (`costingprodn`.`production_id` = `prodpriceinclusive`.`ProductionID`))))
+        LEFT JOIN `ingredpriceinc` ON (((`ingredpriceinc`.`voucher_no` = `costingprodn`.`voucher_no`)
+            AND (`ingredpriceinc`.`ProductionID` = `prodpriceinclusive`.`ProductionID`))))
+        LEFT JOIN `rawmatpriceinc` ON (((`rawmatpriceinc`.`voucher_no` = `costingprodn`.`voucher_no`)
+            AND (`rawmatpriceinc`.`ProductionID` = `prodpriceinclusive`.`ProductionID`))))
+
+
+    GROUP BY `prodpriceinclusive`.`voucher_no` , `prodpriceinclusive`.`groupe` , `prodpriceinclusive`.`product_name` , `prodpriceinclusive`.`ProductionID`]]>
+		</queryString>
+		<field name="voucher_no" class="java.lang.Long">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="production_id" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="factory" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="groupe" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="product_name" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="quantity" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="quantityKGS" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="electricity" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="can" class="java.lang.String"/>
+		<field name="no of can" class="java.lang.Double"/>
+		<field name="label" class="java.lang.String"/>
+		<field name="no of labels" class="java.lang.Double"/>
+		<field name="manpower_hrs" class="java.math.BigDecimal">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="fuel" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="ingredient" class="java.lang.String"/>
+		<field name="ing_qty" class="java.lang.Double"/>
+		<field name="amount" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="raw_material" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="raw_material_qty" class="java.lang.Double"/>
+		<field name="raw_material_amount" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Chart Dataset" uuid="d650cc2a-76fb-43fe-a745-646c0c669822">
+		<queryString>
+			<![CDATA[SELECT 
+        `amounts`.`voucher_no` AS `voucher_no`,
+        `amounts`.`production_id` AS `Production_ID`,
+        `amounts`.`date` AS `date`,
+        `amounts`.`groupe` AS `GROUPE`,
+        `amounts`.`quantity` AS `quantity`,
+        `groups`.`quantityKGS` AS `quantityKGS`,
+        `amounts`.`manpower_amount` AS `manpower`,
+        `amounts`.`product_name` AS `product`,
+        `amounts`.`waste` AS `waste`,
+        `amounts`.`waste_amount` AS `waste_amount`,
+        SUM(DISTINCT `costperunit`.`quantityKGS`) AS `sumkgs`,
+        SUM(DISTINCT `groups`.`rawCost`) AS `raw amount`,
+        ((((`amounts`.`quantityKGS` / SUM(DISTINCT `groups`.`quantityKGS`)) * `groups`.`ingredient amount`) / `amounts`.`quantity`) / 2) AS `inamnt`,
+        SUM(DISTINCT `costperunit`.`ingredient amount`) AS `ingredient amount`,
+        ((((SUM(`amounts`.`quantityKGS`) / SUM(DISTINCT `groups`.`quantityKGS`)) * SUM(DISTINCT `groups`.`ingCost`)) / `amounts`.`quantity`) / 2) AS `IngCost`,
+        ((((SUM(`amounts`.`quantityKGS`) / SUM(DISTINCT `groups`.`quantityKGS`)) * SUM(DISTINCT `groups`.`rawCost`)) / `amounts`.`quantity`) / 2) AS `RawCost`,
+        ((((SUM(`amounts`.`quantityKGS`) / SUM(DISTINCT `groups`.`quantityKGS`)) * SUM(DISTINCT `groups`.`waste_amount`)) / `amounts`.`quantity`) / 2) AS `wasteCost`,
+        (SUM(`amounts`.`can_amount`) / SUM(`amounts`.`quantityKGS`)) AS `CanCost`,
+        (SUM(`amounts`.`label_amount`) / SUM(`amounts`.`quantityKGS`)) AS `LabelCost`,
+        (((`amounts`.`quantityKGS` / SUM(DISTINCT `groups`.`quantityKGS`)) * SUM(DISTINCT `groups`.`EleCost`)) / `amounts`.`quantity`) AS `eleCost`,
+        (((SUM(`amounts`.`quantityKGS`) / SUM(`groups`.`quantityKGS`)) * `groups`.`fuelCost`) / `amounts`.`quantity`) AS `fuelCost`,
+        ((((SUM(`amounts`.`quantityKGS`) / SUM(DISTINCT `groups`.`quantityKGS`)) * `groups`.`manpower_amount`) / `amounts`.`quantity`) / 2) AS `manCost`,
+        ((((((((((SUM(`amounts`.`quantityKGS`) / SUM(DISTINCT `groups`.`quantityKGS`)) * SUM(DISTINCT `groups`.`ingCost`)) / `amounts`.`quantity`) / 2) + ((((SUM(`amounts`.`quantityKGS`) / SUM(DISTINCT `groups`.`quantityKGS`)) * SUM(DISTINCT `groups`.`waste_amount`)) / `amounts`.`quantity`) / 2)) + ((((SUM(`amounts`.`quantityKGS`) / SUM(DISTINCT `groups`.`quantityKGS`)) * `groups`.`rawCost`) / `amounts`.`quantity`) / 2)) + (SUM(`amounts`.`can_amount`) / SUM(`amounts`.`quantityKGS`))) + (SUM(`amounts`.`label_amount`) / SUM(`amounts`.`quantityKGS`))) + (((`amounts`.`quantityKGS` / SUM(DISTINCT `groups`.`quantityKGS`)) * SUM(DISTINCT `groups`.`EleCost`)) / `amounts`.`quantity`)) + ((((SUM(`amounts`.`quantityKGS`) / SUM(DISTINCT `groups`.`quantityKGS`)) * `groups`.`manpower_amount`) / `amounts`.`quantity`) / 2)) AS `Cperunit`
+    FROM
+        ((`amounts`
+        LEFT JOIN `costperunit` ON ((`costperunit`.`voucher_no` = `amounts`.`voucher_no`)))
+        LEFT JOIN `groups` ON (((`costperunit`.`voucher_no` = `groups`.`voucher_no`)
+            AND (`amounts`.`production_id` = `groups`.`Production_ID`))))
+    GROUP BY `costperunit`.`voucher_no` , `groups`.`Production_ID` , `amounts`.`product_name` , `amounts`.`groupe`]]>
+		</queryString>
+		<field name="product" class="java.lang.String"/>
+		<field name="waste_amount" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="date" class="java.sql.Date">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[select Production_ID,date,product,quantityKGS,Cperunit,waste from canning.kgsum]]>
+	</queryString>
+	<field name="Production_ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product" class="java.lang.String"/>
+	<field name="quantityKGS" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Cperunit" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="waste" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="17" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="88" splitType="Stretch">
+			<staticText>
+				<reportElement x="216" y="55" width="158" height="33" uuid="665fa130-382f-4cb6-9820-e53a1f1ea0d7"/>
+				<textElement>
+					<font size="20" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Waste Analysis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="13" width="308" height="31" uuid="ea00f228-c747-48dc-98e2-9b58092e5875"/>
+				<textElement>
+					<font size="20" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[NJORO CANNING FACTORY (K)]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="94" height="70" uuid="048a71a8-5dd6-495b-9b4f-2aa0b58bd2b0"/>
+				<imageExpression><![CDATA["C:\\Program Files\\Cost\\ncf.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="453" y="13" width="100" height="20" uuid="aa323014-3e08-470a-828e-89616677c030"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="11" width="61" height="20" uuid="1972ca0a-1b40-47d0-8030-5332cea5c768"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ProductID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="11" width="89" height="20" uuid="81b2f61d-96b4-4f13-99d9-2670a9d913e2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Waste]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="113" y="11" width="72" height="20" uuid="c73ee386-4240-497e-beda-1a73211eef51"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="351" y="11" width="79" height="20" uuid="3537c78d-ff9c-4454-be32-59013352cf12"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity Kgs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="11" width="100" height="20" uuid="2fb5318b-4dac-4bf0-9018-bf1e747d7d0b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="113" y="5" width="72" height="20" uuid="868c5c6b-2e40-4ad3-837c-76e74fc7e310"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="5" width="100" height="20" uuid="30b4394a-4b04-42ec-8086-0296e82d5b90"/>
+				<textFieldExpression><![CDATA[$F{quantityKGS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="5" width="89" height="20" uuid="77fa2201-39ba-458c-87f6-66a3a5fe4469"/>
+				<textFieldExpression><![CDATA[$F{waste}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="5" width="74" height="20" uuid="11288602-2a22-4b01-970d-77a053e171eb"/>
+				<textFieldExpression><![CDATA[$F{Production_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="5" width="100" height="20" uuid="c923bebc-859d-4ca1-a736-973c544731f4"/>
+				<textFieldExpression><![CDATA[$F{product}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="553" height="20" uuid="b64c63ed-6bf8-44c4-b973-5fcde2d3d675"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="205" y="16" width="80" height="20" uuid="a9febee8-b65a-479c-a535-bb2f7e45dbfb"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="285" y="16" width="40" height="20" uuid="3d78eb9a-8990-4d3f-ba15-8d224bd7eebf"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
