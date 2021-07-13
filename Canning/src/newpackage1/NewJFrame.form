@@ -267,6 +267,9 @@
       </Properties>
     </Component>
     <Container class="javax.swing.JDialog" name="jDialog1">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
