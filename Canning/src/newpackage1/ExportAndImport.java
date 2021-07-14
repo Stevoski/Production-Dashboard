@@ -5537,7 +5537,7 @@ String rcat = (String) jTable15.getValueAt(row, 0);
             case "Package":
                 try {
 //            reception_material.setModel(new DefaultComboBoxModel(allIngredientReturns.getallMaterial().toArray()));
-                String kroodE = "select * from package where factory='" + grutr + "'";
+                String kroodE = "select distinct(main_package) from package where factory='" + grutr + "'";
                 try (PreparedStatement oloki = db_Connection.getInstance().prepareStatement(kroodE)) {
 //                   oloki.setString(1, grutr);
                     rss = oloki.executeQuery(kroodE);
@@ -5558,7 +5558,7 @@ String rcat = (String) jTable15.getValueAt(row, 0);
 
             case "Label":
                 try {
-                String kroodE = "select * from package where factory='" + grutr + "'";
+                String kroodE = "select distinct(main_label) from package where factory='" + grutr + "'";
                 try (PreparedStatement oloki = db_Connection.getInstance().prepareStatement(kroodE)) {
                     rss = oloki.executeQuery(kroodE);
                     while (rss.next()) {

@@ -84,7 +84,7 @@ public class packageReturns {
                 }
                 break;
             case "ADMINISTRATOR":
-                String kroodE = "select * from main_package WHERE category='package'";
+                String kroodE = "select distinct(package) from main_package WHERE category='package'";
                 try (PreparedStatement oloki = db_Connection.getInstance().prepareStatement(kroodE)) {
                     trm = oloki.executeQuery(kroodE);
                     while (trm.next()) {
@@ -97,7 +97,7 @@ public class packageReturns {
                     break;
                 }
                  case "CENTRAL":
-                String kroodS = "select * from main_package WHERE category='package'";
+                String kroodS = "select distinct(package) from main_package WHERE category='package'";
                 try (PreparedStatement oloki = db_Connection.getInstance().prepareStatement(kroodS)) {
                     trm = oloki.executeQuery(kroodS);
                     while (trm.next()) {
