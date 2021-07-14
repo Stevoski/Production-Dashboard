@@ -5362,13 +5362,14 @@ public class ExportAndImport extends javax.swing.JFrame {
                         + "values(?,?,?,?,?,?,?,?)");
 
                 for (int row = 0; row < epocki; row++) {
-                    String rmat = (String) jTable15.getValueAt(row, 0);
-                    String rqty1 = (String) jTable15.getValueAt(row, 1);
+                    String rcat = (String) jTable15.getValueAt(row, 0);
+                    String rmat = (String) jTable15.getValueAt(row, 1);
+                    String rqty1 = (String) jTable15.getValueAt(row, 2);
                     Double rqty = Double.valueOf(rqty1);
-                    String consno = (String) jTable15.getValueAt(row, 2);
-                    String pricee = (String) jTable15.getValueAt(row, 3);
+                    String consno = (String) jTable15.getValueAt(row, 3);
+                    String pricee = (String) jTable15.getValueAt(row, 4);
                     Double price = Double.valueOf(pricee);
-                    String supplier = (String) jTable15.getValueAt(row, 4);
+                    String supplier = (String) jTable15.getValueAt(row, 5);
                     ps4.setString(1, receptiondate);
                     ps4.setString(2, rmat);
                     ps4.setDouble(3, rqty);
@@ -5432,14 +5433,14 @@ public class ExportAndImport extends javax.swing.JFrame {
 
                 for (int row = 0; row < epocki; row++) {
 //
-
-                    String rmat = (String) jTable15.getValueAt(row, 0);
-                    String rqty1 = (String) jTable15.getValueAt(row, 1);
+String rcat = (String) jTable15.getValueAt(row, 0);
+                    String rmat = (String) jTable15.getValueAt(row, 1);
+                    String rqty1 = (String) jTable15.getValueAt(row, 2);
                     Double rqty = Double.valueOf(rqty1);
-                    String consno = (String) jTable15.getValueAt(row, 2);
-                    String pricee = (String) jTable15.getValueAt(row, 3);
+                    String consno = (String) jTable15.getValueAt(row, 3);
+                    String pricee = (String) jTable15.getValueAt(row, 4);
                     Double price = Double.valueOf(pricee);
-                    String supplier = (String) jTable15.getValueAt(row, 4);
+                    String supplier = (String) jTable15.getValueAt(row, 5);
                     ps4.setString(1, receptiondate);
                     ps4.setString(2, rmat);
                     ps4.setDouble(3, rqty);
