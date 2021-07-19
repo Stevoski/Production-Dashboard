@@ -1926,7 +1926,7 @@
                               <Component id="jButton36" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="1010" max="32767" attributes="0"/>
+                      <EmptySpace pref="534" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1937,7 +1937,7 @@
                       <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="463" max="-2" attributes="0"/>
                       <Component id="jButton36" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="417" max="32767" attributes="0"/>
+                      <EmptySpace pref="170" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2402,7 +2402,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1496" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="1027" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Component id="Traceability_report" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -2410,7 +2410,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="928" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="554" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Component id="Traceability_report" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -2507,7 +2507,7 @@
                                   <Component id="jButton30" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane6" pref="723" max="32767" attributes="0"/>
+                              <Component id="jScrollPane6" pref="349" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2688,7 +2688,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
                                   <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="744" max="32767" attributes="0"/>
+                                  <EmptySpace pref="161" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2697,7 +2697,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="799" max="32767" attributes="0"/>
+                                  <EmptySpace pref="425" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3683,7 +3683,7 @@
                                     <DimensionLayout dim="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace pref="24" max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -3701,6 +3701,8 @@
                                                               <Component id="jButton104" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                                                               <Component id="jButton105" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                                              <Component id="jLabel109" min="-2" max="-2" attributes="0"/>
                                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                                           </Group>
                                                           <Group type="102" alignment="0" attributes="0">
@@ -3729,7 +3731,7 @@
                                                                   </Group>
                                                                   <Component id="jScrollPane54" alignment="0" min="-2" pref="453" max="-2" attributes="0"/>
                                                               </Group>
-                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <EmptySpace pref="60" max="32767" attributes="0"/>
                                                           </Group>
                                                       </Group>
                                                   </Group>
@@ -3832,6 +3834,7 @@
                                                       <Group type="103" groupAlignment="3" attributes="0">
                                                           <Component id="jButton104" alignment="3" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jButton105" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel109" alignment="3" min="-2" pref="0" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                                   </Group>
@@ -3895,8 +3898,9 @@
                                         <Component class="javax.swing.JTable" name="jTable_consumedproduct">
                                           <Properties>
                                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                              <Table columnCount="4" rowCount="0">
-                                                <Column editable="false" title="Ingredient Name" type="java.lang.Object"/>
+                                              <Table columnCount="5" rowCount="0">
+                                                <Column editable="false" title="Category" type="java.lang.Object"/>
+                                                <Column editable="false" title="Name" type="java.lang.Object"/>
                                                 <Column editable="false" title="Qty" type="java.lang.Object"/>
                                                 <Column editable="false" title="Unit" type="java.lang.Object"/>
                                                 <Column editable="false" title="Price" type="java.lang.Object"/>
@@ -3904,6 +3908,11 @@
                                             </Property>
                                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                               <TableColumnModel selectionModel="0">
+                                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                                  <Title/>
+                                                  <Editor/>
+                                                  <Renderer/>
+                                                </Column>
                                                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                                   <Title/>
                                                   <Editor/>
@@ -4019,6 +4028,9 @@
                                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                             </Property>
                                           </Properties>
+                                          <Events>
+                                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable_ppackMouseClicked"/>
+                                          </Events>
                                           <AuxValues>
                                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                                           </AuxValues>
@@ -4107,6 +4119,9 @@
                                       <Properties>
                                         <Property name="text" type="java.lang.String" value="Discard"/>
                                       </Properties>
+                                      <Events>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton105ActionPerformed"/>
+                                      </Events>
                                       <AuxValues>
                                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                                       </AuxValues>
@@ -4168,6 +4183,12 @@
                                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                                       </AuxValues>
+                                    </Component>
+                                    <Component class="javax.swing.JLabel" name="jLabel109">
+                                      <Properties>
+                                        <Property name="text" type="java.lang.String" value="jLabel109"/>
+                                        <Property name="opaque" type="boolean" value="true"/>
+                                      </Properties>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -4234,7 +4255,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jButton44" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="1316" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="1330" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4251,8 +4272,11 @@
                       <SubComponents>
                         <Component class="javax.swing.JButton" name="jButton44">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="jButton44"/>
+                            <Property name="text" type="java.lang.String" value="Modify"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton44ActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -4325,6 +4349,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bomTableMouseClicked"/>
+                              </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                               </AuxValues>

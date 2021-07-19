@@ -43,6 +43,7 @@ import java.util.Map;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -73,8 +74,10 @@ import org.apache.commons.dbutils.DbUtils;
  * @author Stevoski
  */
 public class ExportAndImport extends javax.swing.JFrame {
- public static  JComboBox<String> categorizer = new JComboBox<>();
-  ResultSet rs = null;
+    public JLabel patlabel=new JLabel();
+    public JLabel patlabelle=new JLabel();
+    public static JComboBox<String> categorizer = new JComboBox<>();
+    ResultSet rs = null;
     ResultSet rss = null;
     public Object[][] Pasters = {};
     FileInputStream inputstream = null;
@@ -93,7 +96,7 @@ public class ExportAndImport extends javax.swing.JFrame {
         jComboBox5.setEditable(true);
         TableColumn tabcat = jTable15.getColumnModel().getColumn(0);
         tabcat.setCellEditor(new DefaultCellEditor(categorizer));
-         
+
     }
 
     /**
@@ -337,6 +340,7 @@ public class ExportAndImport extends javax.swing.JFrame {
         jButton106 = new javax.swing.JButton();
         jComboBox15 = new javax.swing.JComboBox<>();
         jComboing = new javax.swing.JComboBox<>();
+        jLabel109 = new javax.swing.JLabel();
         jCombopprod = new javax.swing.JComboBox<>();
         jLabel81 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
@@ -1350,7 +1354,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addGroup(past_and_sort_reportLayout.createSequentialGroup()
                         .addGap(255, 255, 255)
                         .addComponent(jButton36)))
-                .addContainerGap(1010, Short.MAX_VALUE))
+                .addContainerGap(534, Short.MAX_VALUE))
         );
         past_and_sort_reportLayout.setVerticalGroup(
             past_and_sort_reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1359,7 +1363,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jLabel80)
                 .addGap(463, 463, 463)
                 .addComponent(jButton36)
-                .addContainerGap(417, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         jPanel26.setBackground(new java.awt.Color(110, 89, 222));
@@ -1655,7 +1659,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addComponent(jButton29)
                     .addComponent(jButton30))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 723, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1671,14 +1675,14 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGap(211, 211, 211)
                 .addComponent(jLabel60)
-                .addContainerGap(744, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel60)
-                .addContainerGap(799, Short.MAX_VALUE))
+                .addContainerGap(425, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -1704,13 +1708,13 @@ public class ExportAndImport extends javax.swing.JFrame {
         Traceability.setLayout(TraceabilityLayout);
         TraceabilityLayout.setHorizontalGroup(
             TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1496, Short.MAX_VALUE)
+            .addGap(0, 1027, Short.MAX_VALUE)
             .addGroup(TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(Traceability_report))
         );
         TraceabilityLayout.setVerticalGroup(
             TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 928, Short.MAX_VALUE)
+            .addGap(0, 554, Short.MAX_VALUE)
             .addGroup(TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(Traceability_report))
         );
@@ -2007,11 +2011,11 @@ public class ExportAndImport extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Ingredient Name", "Qty", "Unit", "Price"
+                "Category", "Name", "Qty", "Unit", "Price"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -2057,6 +2061,11 @@ public class ExportAndImport extends javax.swing.JFrame {
             }
         });
         jTable_ppack.setSelectionBackground(new java.awt.Color(51, 102, 0));
+        jTable_ppack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable_ppackMouseClicked(evt);
+            }
+        });
         jScrollPane54.setViewportView(jTable_ppack);
 
         jLabel139.setText("Package");
@@ -2077,6 +2086,11 @@ public class ExportAndImport extends javax.swing.JFrame {
         });
 
         jButton105.setText("Discard");
+        jButton105.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton105ActionPerformed(evt);
+            }
+        });
 
         jButton61.setText("Generate Report ");
         jButton61.addActionListener(new java.awt.event.ActionListener() {
@@ -2101,12 +2115,15 @@ public class ExportAndImport extends javax.swing.JFrame {
             }
         });
 
+        jLabel109.setText("jLabel109");
+        jLabel109.setOpaque(true);
+
         javax.swing.GroupLayout jPanelConsumptionLayout = new javax.swing.GroupLayout(jPanelConsumption);
         jPanelConsumption.setLayout(jPanelConsumptionLayout);
         jPanelConsumptionLayout.setHorizontalGroup(
             jPanelConsumptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelConsumptionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanelConsumptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelConsumptionLayout.createSequentialGroup()
                         .addGroup(jPanelConsumptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2122,6 +2139,8 @@ public class ExportAndImport extends javax.swing.JFrame {
                                 .addComponent(jButton104)
                                 .addGap(45, 45, 45)
                                 .addComponent(jButton105)
+                                .addGap(69, 69, 69)
+                                .addComponent(jLabel109)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanelConsumptionLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2143,7 +2162,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                                             .addComponent(jCombo_label, 0, 166, Short.MAX_VALUE)
                                             .addComponent(jText_lblqty)))
                                     .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addContainerGap(60, Short.MAX_VALUE))))
                     .addGroup(jPanelConsumptionLayout.createSequentialGroup()
                         .addGroup(jPanelConsumptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelConsumptionLayout.createSequentialGroup()
@@ -2216,7 +2235,8 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsumptionLayout.createSequentialGroup()
                         .addGroup(jPanelConsumptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton104)
-                            .addComponent(jButton105))
+                            .addComponent(jButton105)
+                            .addComponent(jLabel109, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(17, 17, 17)))
                 .addGroup(jPanelConsumptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane54, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
@@ -2337,7 +2357,12 @@ public class ExportAndImport extends javax.swing.JFrame {
 
         jPanel47.setLayout(new java.awt.BorderLayout());
 
-        jButton44.setText("jButton44");
+        jButton44.setText("Modify");
+        jButton44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton44ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel49Layout = new javax.swing.GroupLayout(jPanel49);
         jPanel49.setLayout(jPanel49Layout);
@@ -2345,7 +2370,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel49Layout.createSequentialGroup()
                 .addComponent(jButton44)
-                .addGap(0, 1316, Short.MAX_VALUE))
+                .addGap(0, 1330, Short.MAX_VALUE))
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2365,6 +2390,11 @@ public class ExportAndImport extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        bomTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bomTableMouseClicked(evt);
+            }
+        });
         jScrollPane20.setViewportView(bomTable);
 
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
@@ -3818,7 +3848,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, 81, Short.MAX_VALUE)
+                .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -5416,7 +5446,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
             break;
- case "Label":
+            case "Label":
                 try {
                 Connection conpa = (Connection) db_Connection.getInstance();
                 conpa.setAutoCommit(false);
@@ -5427,7 +5457,7 @@ public class ExportAndImport extends javax.swing.JFrame {
 
                 for (int row = 0; row < epocki; row++) {
 //
-String rcat = (String) jTable15.getValueAt(row, 0);
+                    String rcat = (String) jTable15.getValueAt(row, 0);
                     String rmat = (String) jTable15.getValueAt(row, 1);
                     String rqty1 = (String) jTable15.getValueAt(row, 2);
                     Double rqty = Double.valueOf(rqty1);
@@ -6023,20 +6053,20 @@ String rcat = (String) jTable15.getValueAt(row, 0);
 
     private void issuematerialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issuematerialActionPerformed
         String chusen = (String) jComboBox33.getSelectedItem();
-          String pack = (String) issuematerial.getSelectedItem();
-                String issto = (String) issueto.getSelectedItem();
-           switch (chusen) {
+        String pack = (String) issuematerial.getSelectedItem();
+        String issto = (String) issueto.getSelectedItem();
+        switch (chusen) {
             case "Package":
                 issuecons.removeAllItems();
                 try (PreparedStatement ppack = db_Connection.getInstance().prepareStatement("SELECT main_package FROM package WHERE can_name =? into @skram")) {
                     ppack.setString(1, pack);
                     ppack.execute();
-                    ResultSet rasta=ppack.executeQuery("SELECT distinct(cons_no) FROM package_reception WHERE package =@skram");
+                    ResultSet rasta = ppack.executeQuery("SELECT distinct(cons_no) FROM package_reception WHERE package =@skram");
 //                    rss = ppack.executeQuery();
                     while (rasta.next()) {
                         issuecons.addItem(rasta.getString("cons_no"));
-                                           }
-                    
+                    }
+
                     rasta.close();
                 } catch (SQLException e) {
                     Logger.getLogger(NewJFrame.class
@@ -6067,17 +6097,17 @@ String rcat = (String) jTable15.getValueAt(row, 0);
                             .getName()).log(Level.SEVERE, null, ex);
                 }
                 break;
-                case "Label":
-                         issuecons.removeAllItems();       
+            case "Label":
+                issuecons.removeAllItems();
                 try (PreparedStatement ppack = db_Connection.getInstance().prepareStatement("SELECT main_package FROM package WHERE can_name =? into @skram")) {
                     ppack.setString(1, pack);
                     ppack.execute();
-                    ResultSet rasta=ppack.executeQuery("SELECT distinct(cons_no) FROM package_reception WHERE package =@skram");
+                    ResultSet rasta = ppack.executeQuery("SELECT distinct(cons_no) FROM package_reception WHERE package =@skram");
 //                    rss = ppack.executeQuery();
                     while (rasta.next()) {
                         issuecons.addItem(rasta.getString("cons_no"));
-                                           }
-                    
+                    }
+
                     rasta.close();
                 } catch (SQLException e) {
                     Logger.getLogger(NewJFrame.class
@@ -6164,7 +6194,7 @@ String rcat = (String) jTable15.getValueAt(row, 0);
                 Logger.getLogger(ExportAndImport.class.getName()).log(Level.SEVERE, null, ex);
             }
             break;
-             case "Label":
+            case "Label":
                 try {
                 String kroods = "select * from package where factory='" + grutr + "'";
                 try (PreparedStatement olokis = db_Connection.getInstance().prepareStatement(kroods)) {
@@ -6307,7 +6337,6 @@ String rcat = (String) jTable15.getValueAt(row, 0);
             java.util.logging.Logger.getLogger(NewJFrame.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, e);
         }
-
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_savepackActionPerformed
 
@@ -6437,6 +6466,7 @@ String rcat = (String) jTable15.getValueAt(row, 0);
     private void jButton102ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton102ActionPerformed
         String phakto = jTextLogin.getText();
         String pprod = jLabel83.getText();
+                String patlabe = patlabelle.getText();
         String qty = jTextppqty.getText();
         String phid = (String) jComboing.getSelectedItem();
 
@@ -6487,7 +6517,7 @@ String rcat = (String) jTable15.getValueAt(row, 0);
                                     pmb.setString(2, pprod);
                                     rss = pmb.executeQuery();
                                     while (rss.next()) {
-                                        dtb.addRow(new Object[]{rss.getString("ingredient"), rss.getDouble("quantity"), rss.getString("unit"), rss.getDouble("price")});
+                                        dtb.addRow(new Object[]{rss.getString("category"), rss.getString("ingredient"), rss.getDouble("quantity"), rss.getString("unit"), rss.getDouble("price")});
                                     }
                                     rss.close();
                                     pmb.close();
@@ -6560,7 +6590,7 @@ String rcat = (String) jTable15.getValueAt(row, 0);
                                     pmb.setString(2, pprod);
                                     rss = pmb.executeQuery();
                                     while (rss.next()) {
-                                        dtb.addRow(new Object[]{rss.getString("ingredient"), rss.getDouble("quantity"), rss.getString("unit"), rss.getDouble("price")});
+                                        dtb.addRow(new Object[]{rss.getString("category"), rss.getString("ingredient"), rss.getDouble("quantity"), rss.getString("unit"), rss.getDouble("price")});
                                     }
                                     rss.close();
                                     pmb.close();
@@ -7053,7 +7083,7 @@ String rcat = (String) jTable15.getValueAt(row, 0);
                     String instc = jTextField140.getText();
                     Double prstc = Double.valueOf(instc);
                     PreparedStatement psales = db_Connection.getInstance().prepareStatement("INSERT INTO salestable(voucher_no,productionid,product,quantity,soldby,salesdate,buyer,unit_price,stock_cf,factory,invoice_number,veh_no,batchno)"
-                        + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                            + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
                     psales.setInt(1, svcr);
                     psales.setInt(2, spid);
                     psales.setString(3, sprod);
@@ -7125,7 +7155,7 @@ String rcat = (String) jTable15.getValueAt(row, 0);
     }//GEN-LAST:event_jbatchnoActionPerformed
 
     private void jTable15KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable15KeyPressed
-   int numRows1 = jTable15.getRowCount();
+        int numRows1 = jTable15.getRowCount();
         switch (evt.getKeyCode()) {
             case KeyEvent.VK_ENTER:
                 DefaultTableModel moderode = (DefaultTableModel) jTable15.getModel();
@@ -7137,53 +7167,53 @@ String rcat = (String) jTable15.getValueAt(row, 0);
     }//GEN-LAST:event_jTable15KeyPressed
 
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
-String monthel=(String) jComboBox21.getSelectedItem();
-String factoe=(String) jComboBox22.getSelectedItem();       
+        String monthel = (String) jComboBox21.getSelectedItem();
+        String factoe = (String) jComboBox22.getSelectedItem();
         jTable16.addKeyListener(new KeyAdapter() {
 //            @Override
             public void keyPressed(KeyEvent evt) {
                 if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                                            int powt = jTable16.getSelectedRow();
-                        String tableclickp = (jTable16.getModel().getValueAt(powt, 0).toString());
-        NewJFrame.jTextField138.setText(tableclickp);
+                    int powt = jTable16.getSelectedRow();
+                    String tableclickp = (jTable16.getModel().getValueAt(powt, 0).toString());
+                    NewJFrame.jTextField138.setText(tableclickp);
                     prorptShow.productidReport();
-                     MainPanel.removeAll();
-        MainPanel.add(NewJFrame.jPanel8);
-        MainPanel.repaint();
-        MainPanel.revalidate();              					
-			}
-			}
-		});
-if (factoe.equals("All")){
-     try {
-            String sql = "SELECT * FROM Summary_view where month=  '" + monthel + "'";
-            PreparedStatement pst = db_Connection.getInstance().prepareStatement(sql);
-            ResultSet rsses = pst.executeQuery();
-            jTable16.setModel(rsToTableModels.aboveMarginModel.buildTableModel(rsses));
-                  rsses.close();
-                  pst.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+                    MainPanel.removeAll();
+                    MainPanel.add(NewJFrame.jPanel8);
+                    MainPanel.repaint();
+                    MainPanel.revalidate();
+                }
+            }
+        });
+        if (factoe.equals("All")) {
+            try {
+                String sql = "SELECT * FROM Summary_view where month=  '" + monthel + "'";
+                PreparedStatement pst = db_Connection.getInstance().prepareStatement(sql);
+                ResultSet rsses = pst.executeQuery();
+                jTable16.setModel(rsToTableModels.aboveMarginModel.buildTableModel(rsses));
+                rsses.close();
+                pst.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
 //        monthprodcost.add(prodscroll);
 //        monthprodcost.repaint();
 //        monthprodcost.revalidate();        
-}else{
-   try {
-            String sql = "SELECT * FROM Summary_view where month=  '" + monthel + "' and factory= '" + factoe + "'";
-            PreparedStatement pst = db_Connection.getInstance().prepareStatement(sql);
-            ResultSet rsses = pst.executeQuery();
-            jTable16.setModel(rsToTableModels.aboveMarginModel.buildTableModel(rsses));
-            rsses.close();
-            pst.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }       
-}      // TODO add your handling code here:
+        } else {
+            try {
+                String sql = "SELECT * FROM Summary_view where month=  '" + monthel + "' and factory= '" + factoe + "'";
+                PreparedStatement pst = db_Connection.getInstance().prepareStatement(sql);
+                ResultSet rsses = pst.executeQuery();
+                jTable16.setModel(rsToTableModels.aboveMarginModel.buildTableModel(rsses));
+                rsses.close();
+                pst.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }      // TODO add your handling code here:
     }//GEN-LAST:event_jButton40ActionPerformed
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
-com.canning.reports.SummaryReport.PrintSummaryreport();        // TODO add your handling code here:
+        com.canning.reports.SummaryReport.PrintSummaryreport();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void engdiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engdiesActionPerformed
@@ -7191,67 +7221,67 @@ com.canning.reports.SummaryReport.PrintSummaryreport();        // TODO add your 
     }//GEN-LAST:event_engdiesActionPerformed
 
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
-String date=  ((JTextField) engdate.getDateEditor().getUiComponent()).getText();
-String facts= (String) engfact.getSelectedItem();
-String ele= engele.getText();
-Double elect=Double.valueOf(ele);
-String boi=engboil.getText();
-Double boiler=Double.valueOf(boi);
-String wat=engwater.getText();
-Double water=Double.valueOf(wat);
-String dies=engdies.getText();
-Double diesel=Double.valueOf(dies);
-try{
- PreparedStatement pseng;
-    try {
-        pseng = db_Connection.getInstance().prepareStatement("insert into daily_factory_energy_consumptions(date,factory,electricity,boiler,water,diesel)  values (?,?,?,?,?,?)");
-   
-pseng.setString(1, date);
- pseng.setString(2, facts);
-pseng.setDouble(3, elect);
-pseng.setDouble(4, boiler);
-pseng.setDouble(5, water);
-pseng.setDouble(6, diesel);
-pseng.execute();
+        String date = ((JTextField) engdate.getDateEditor().getUiComponent()).getText();
+        String facts = (String) engfact.getSelectedItem();
+        String ele = engele.getText();
+        Double elect = Double.valueOf(ele);
+        String boi = engboil.getText();
+        Double boiler = Double.valueOf(boi);
+        String wat = engwater.getText();
+        Double water = Double.valueOf(wat);
+        String dies = engdies.getText();
+        Double diesel = Double.valueOf(dies);
+        try {
+            PreparedStatement pseng;
+            try {
+                pseng = db_Connection.getInstance().prepareStatement("insert into daily_factory_energy_consumptions(date,factory,electricity,boiler,water,diesel)  values (?,?,?,?,?,?)");
 
-JOptionPane.showMessageDialog(null,"Successfully Posted!");
+                pseng.setString(1, date);
+                pseng.setString(2, facts);
+                pseng.setDouble(3, elect);
+                pseng.setDouble(4, boiler);
+                pseng.setDouble(5, water);
+                pseng.setDouble(6, diesel);
+                pseng.execute();
 
-pseng.close();
+                JOptionPane.showMessageDialog(null, "Successfully Posted!");
 
- try {
-                            DefaultTableModel model = (DefaultTableModel) engtable.getModel();
+                pseng.close();
 
-                            try {
-                                int e3 = model.getRowCount();
-                                for (int eu3 = 0; eu3 <= e3; ++eu3) {
-                                    model.removeRow(0);
-                                }
-                            } catch (Exception e) {
-                            }
-                            try (PreparedStatement pse = db_Connection.getInstance().prepareStatement("SELECT * FROM daily_factory_energy_consumptions order by date;")) {
+                try {
+                    DefaultTableModel model = (DefaultTableModel) engtable.getModel();
 
-                                rs = pse.executeQuery();
-
-                                while (rs.next()) {
-                                    model.addRow(new Object[]{rs.getString("date"), rs.getString("factory"), rs.getDouble("electricity"), rs.getDouble("boiler"), rs.getDouble("water"), rs.getDouble("diesel")});
-                                }
-                                rs.close();
-                                pse.close();
-                            } catch (Exception e) {
-                                //                            e.printStackTrace();
-                                JOptionPane.showMessageDialog(this, "Error in connectivity");
-                            }
-
-                        } catch (Exception e) {
-                            JOptionPane.showMessageDialog(null, e.getMessage());
-                            //                        e.printStackTrace();
+                    try {
+                        int e3 = model.getRowCount();
+                        for (int eu3 = 0; eu3 <= e3; ++eu3) {
+                            model.removeRow(0);
                         }
- } catch (InstantiationException ex) {
-        Logger.getLogger(ExportAndImport.class.getName()).log(Level.SEVERE, null, ex);
-    }
-}catch(SQLException e){
-         Logger.getLogger(ExportAndImport.class.getName()).log(Level.SEVERE, null, e);
-    }
+                    } catch (Exception e) {
+                    }
+                    try (PreparedStatement pse = db_Connection.getInstance().prepareStatement("SELECT * FROM daily_factory_energy_consumptions order by date;")) {
+
+                        rs = pse.executeQuery();
+
+                        while (rs.next()) {
+                            model.addRow(new Object[]{rs.getString("date"), rs.getString("factory"), rs.getDouble("electricity"), rs.getDouble("boiler"), rs.getDouble("water"), rs.getDouble("diesel")});
+                        }
+                        rs.close();
+                        pse.close();
+                    } catch (Exception e) {
+                        //                            e.printStackTrace();
+                        JOptionPane.showMessageDialog(this, "Error in connectivity");
+                    }
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    //                        e.printStackTrace();
+                }
+            } catch (InstantiationException ex) {
+                Logger.getLogger(ExportAndImport.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(ExportAndImport.class.getName()).log(Level.SEVERE, null, e);
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton41ActionPerformed
 
@@ -7260,19 +7290,282 @@ pseng.close();
     }//GEN-LAST:event_engwaterActionPerformed
 
     private void jButton103ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton103ActionPerformed
+ String patlabe = patlabelle.getText();
+ String minprod=  jLabel83.getText();
+ switch (patlabe){
+     case "Ingredient":
+          int yesNo = JOptionPane.showConfirmDialog(null, "Do You Really Want To DELETE this data?", "Delete", JOptionPane.YES_NO_OPTION);
+        if (yesNo == 0) {            
+            if (!patlabel.getText().equals("")) {
+                try (PreparedStatement pers = db_Connection.getInstance().prepareStatement("DELETE FROM ingredbom WHERE ingredient = ? and product=?")) {
+                    String id = patlabel.getText();
+                    pers.setString(1, id);
+                    pers.setString(2, minprod);
+                    pers.executeUpdate();
+                    //TABLE PANEL ADD
+                    try {
+                        DefaultTableModel model = (DefaultTableModel) jTable_consumedproduct.getModel();
+                        try {
+                            int z3 = model.getRowCount();
+                            for (int lu3 = 0; lu3 <= z3; ++lu3) {
+                                model.removeRow(0);
+                            }
+                        } catch (Exception e) {
+                        }
+                        try (PreparedStatement ps7 = db_Connection.getInstance().prepareStatement("SELECT * FROM bom_ingredients where product=?;")) {
+//                             ps7.setString(1, id);
+                              ps7.setString(2, minprod);
+                            rs = ps7.executeQuery();
+                            while (rs.next()) {
+                                model.addRow(new Object[]{ rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getDouble("price")});
+                           }
+                    rs.close();
+                            ps7.close();
+                        } catch (Exception e) {
+                            //                            e.printStackTrace();
+                            JOptionPane.showMessageDialog(this, "Error in connectivity");
+                        }
+
+                    } catch (Exception e) {
+                        //                        e.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Invalid Entry or field must be completely filled", "message", 2);
+                    }
+                    pers.close();
+                    JOptionPane.showMessageDialog(null, "The Data Was Successfully Deleted!");
+                } catch (Exception e) {
+                    Logger.getLogger(NewJFrame.class
+                            .getName()).log(Level.SEVERE, null, e);
+
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Could NOT Delete The Data! No product Selected!");
+            }
+        }
+         
+         break;
+     case "Raw Material":
+          int yesNoe = JOptionPane.showConfirmDialog(null, "Do You Really Want To DELETE this data?", "Delete", JOptionPane.YES_NO_OPTION);
+        if (yesNoe == 0) {            
+            if (!patlabel.getText().equals("")) {
+                try (PreparedStatement pers = db_Connection.getInstance().prepareStatement("DELETE FROM rawbom WHERE raw_material = ? and product_name=?")) {
+                    String id = patlabel.getText();
+                    pers.setString(1, id);
+                    pers.setString(2, minprod);
+                    pers.executeUpdate();
+                    //TABLE PANEL ADD
+                    try {
+                        DefaultTableModel model = (DefaultTableModel) jTable_consumedproduct.getModel();
+                        try {
+                            int z3 = model.getRowCount();
+                            for (int lu3 = 0; lu3 <= z3; ++lu3) {
+                                model.removeRow(0);
+                            }
+                        } catch (Exception e) {
+                        }
+                        try (PreparedStatement ps7 = db_Connection.getInstance().prepareStatement("SELECT * FROM bom_ingredients where product=?;")) {
+//                             ps7.setString(1, id);
+                              ps7.setString(2, minprod);
+                            rs = ps7.executeQuery();
+                            while (rs.next()) {
+                                model.addRow(new Object[]{ rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getDouble("price")});
+                           }
+                    rs.close();
+                            ps7.close();
+                        } catch (Exception e) {
+                            //                            e.printStackTrace();
+                            JOptionPane.showMessageDialog(this, "Error in connectivity");
+                        }
+
+                    } catch (Exception e) {
+                        //                        e.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Invalid Entry or field must be completely filled", "message", 2);
+                    }
+                    pers.close();
+                    JOptionPane.showMessageDialog(null, "The Data Was Successfully Deleted!");
+                } catch (Exception e) {
+                    Logger.getLogger(NewJFrame.class
+                            .getName()).log(Level.SEVERE, null, e);
+
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Could NOT Delete The Data! No product Selected!");
+            }
+        }
+         
+         break;
+                 
+     
+     
+ }
+        
+        
+        
+       
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton103ActionPerformed
 
     private void jTable_consumedproductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_consumedproductMouseClicked
 
-
+        int row = jTable_consumedproduct.getSelectedRow();
+            String tableclick = (jTable_consumedproduct.getModel().getValueAt(row, 1).toString());
+            String tableclicker = (jTable_consumedproduct.getModel().getValueAt(row, 0).toString());
+            patlabel.setText(tableclick);
+            patlabelle.setText(tableclicker);
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable_consumedproductMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    private void bomTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bomTableMouseClicked
+        try {
+            int row = bomTable.getSelectedRow();
+            String tableclick = (bomTable.getModel().getValueAt(row, 0).toString());
+            jTextField31.setText(tableclick);
+            jLabel83.setText(tableclick);
+            Connection conclikftt = (Connection) db_Connection.getInstance();
+            String clik = "select * from bom_product where product='" + tableclick + "' ";
+            String rawclik = "select * from bom_ingredients where product='" + tableclick + "' ";
+            String packclik = "select * from bom_package where product='" + tableclick + "' ";
+            try (PreparedStatement psclikk = conclikftt.prepareStatement(clik)) {
+                rs = psclikk.executeQuery();
+
+                DefaultTableModel modulartor = (DefaultTableModel) jTable44.getModel();
+                try {
+                    int z = modulartor.getRowCount();
+                    for (int lue = 0; lue <= z; ++lue) {
+                        modulartor.removeRow(0);
+                    }
+                } catch (Exception e) {
+
+                }
+                while (rs.next()) {
+                    modulartor.addRow(new Object[]{rs.getString("product"), rs.getDouble("qty"), rs.getString("unit")});
+            }
+             psclikk.close();
+             rs.close();
+                try (PreparedStatement psbom = conclikftt.prepareStatement(rawclik)) {
+                rs = psbom.executeQuery();
+
+                DefaultTableModel rawmod = (DefaultTableModel) jTable_consumedproduct.getModel();
+                try {
+                    int z = rawmod.getRowCount();
+                    for (int lue = 0; lue <= z; ++lue) {
+                        rawmod.removeRow(0);
+                    }
+                } catch (Exception e) {
+
+                }
+                while (rs.next()) {
+                    rawmod.addRow(new Object[]{rs.getString("Category"), rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getString("price")});
+            }
+             psbom.close();
+             rs.close();
+             try (PreparedStatement pacbom = conclikftt.prepareStatement(packclik)) {
+                rs = pacbom.executeQuery();
+
+                DefaultTableModel pacmod = (DefaultTableModel) jTable_ppack.getModel();
+                try {
+                    int z = pacmod.getRowCount();
+                    for (int lue = 0; lue <= z; ++lue) {
+                        pacmod.removeRow(0);
+                    }
+                } catch (Exception e) {
+
+                }
+                while (rs.next()) {
+                    pacmod.addRow(new Object[]{rs.getString("product"),rs.getString("package"), rs.getDouble("package_qty"), rs.getString("label"), rs.getDouble("label_qty")});
+            }          
+               pacbom.close();
+               rs.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error connection");
+                            e.printStackTrace();
+        }
+                
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error connection");
+                            e.printStackTrace();
+        }
+                
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error connection");
+                            e.printStackTrace();
+        }
+    }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error connection");
+                        e.printStackTrace();
+    }
+    // TODO add your handling code here:
+    }//GEN-LAST:event_bomTableMouseClicked
+
+    private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton44ActionPerformed
+
+    private void jTable_ppackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_ppackMouseClicked
+
+        int row = jTable_ppack.getSelectedRow();
+            String tableclick = (jTable_ppack.getModel().getValueAt(row, 0).toString());
+            jLabel109.setText(tableclick);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable_ppackMouseClicked
+
+    private void jButton105ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton105ActionPerformed
+String minprod=  jLabel83.getText();
+        int yesNo = JOptionPane.showConfirmDialog(null, "Do You Really Want To DELETE this data?", "Delete", JOptionPane.YES_NO_OPTION);
+        if (yesNo == 0) {            
+            if (!jLabel109.getText().equals("")) {
+                try (PreparedStatement pers = db_Connection.getInstance().prepareStatement("DELETE FROM bom_package WHERE package = ? and product=?")) {
+                    String id = jLabel109.getText();
+                    pers.setString(1, id);
+                    pers.setString(2, minprod);
+                    pers.executeUpdate();
+                    //TABLE PANEL ADD
+                    try {
+                        DefaultTableModel model = (DefaultTableModel) jTable_ppack.getModel();
+                        try {
+                            int z3 = model.getRowCount();
+                            for (int lu3 = 0; lu3 <= z3; ++lu3) {
+                                model.removeRow(0);
+                            }
+                        } catch (Exception e) {
+                        }
+                        try (PreparedStatement ps7 = db_Connection.getInstance().prepareStatement("SELECT * FROM bom_package where package = ? and product=?;")) {
+                             ps7.setString(1, id);
+                              ps7.setString(2, minprod);
+                            rs = ps7.executeQuery();
+                            while (rs.next()) {
+                                model.addRow(new Object[]{rs.getString("product"), rs.getString("package"), rs.getDouble("package_qty"), rs.getString("label"), rs.getDouble("label_qty")});
+                           }
+                    rs.close();
+                            ps7.close();
+                        } catch (Exception e) {
+                            //                            e.printStackTrace();
+                            JOptionPane.showMessageDialog(this, "Error in connectivity");
+                        }
+                    } catch (Exception e) {
+                        //                        e.printStackTrace();
+                        JOptionPane.showMessageDialog(null, "Invalid Entry or field must be completely filled", "message", 2);
+                    }
+                    pers.close();
+                    JOptionPane.showMessageDialog(null, "The Data Was Successfully Deleted!");
+                } catch (Exception e) {
+                    Logger.getLogger(NewJFrame.class
+                            .getName()).log(Level.SEVERE, null, e);
+
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Could NOT Delete The Data! No product Selected!");
+            }
+        }
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton105ActionPerformed
+
+/**
+ * @param args the command line arguments
+ */
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -7286,13 +7579,33 @@ pseng.close();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ExportAndImport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExportAndImport
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ExportAndImport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExportAndImport
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ExportAndImport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExportAndImport
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ExportAndImport.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExportAndImport
+
+.class  
+
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -7451,6 +7764,7 @@ pseng.close();
     public static javax.swing.JLabel jLabel106;
     public static javax.swing.JLabel jLabel107;
     public static javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     public static javax.swing.JLabel jLabel124;
