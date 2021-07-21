@@ -1044,20 +1044,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel247 = new javax.swing.JLabel();
         jScrollPane50 = new javax.swing.JScrollPane();
         jTable41 = new javax.swing.JTable();
-        jPanelUsers = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel133 = new javax.swing.JLabel();
-        jLabel96 = new javax.swing.JLabel();
-        jTextField91 = new javax.swing.JTextField();
-        jLabel134 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel136 = new javax.swing.JLabel();
-        jComboBox28 = new javax.swing.JComboBox<>();
-        jPanel59 = new javax.swing.JPanel();
-        jPanel60 = new javax.swing.JPanel();
-        jLabel131 = new javax.swing.JLabel();
-        jScrollPane21 = new javax.swing.JScrollPane();
-        jTableAccounts = new javax.swing.JTable();
         jPanelsalesstockupdate = new javax.swing.JPanel();
         jLabel121 = new javax.swing.JLabel();
         jPanel50 = new javax.swing.JPanel();
@@ -7633,127 +7619,6 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         MainPanel.add(WarehouseStock, "card35");
-
-        jPanelUsers.setMaximumSize(new java.awt.Dimension(500, 500));
-        jPanelUsers.setMinimumSize(new java.awt.Dimension(500, 500));
-        jPanelUsers.setLayout(new java.awt.BorderLayout());
-
-        jPanel13.setPreferredSize(new java.awt.Dimension(150, 530));
-
-        jLabel133.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jLabel133.setText("Create Account");
-
-        jLabel96.setText("Username");
-
-        jLabel134.setText("Password");
-
-        jLabel136.setText("Account Limit");
-
-        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addContainerGap(23, Short.MAX_VALUE)
-                        .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addComponent(jTextField91)
-            .addComponent(jPasswordField1)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel134)
-                    .addComponent(jLabel136))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jComboBox28, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel133)
-                .addGap(152, 152, 152)
-                .addComponent(jLabel96)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField91, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel134)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel136)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanelUsers.add(jPanel13, java.awt.BorderLayout.LINE_START);
-
-        jLabel131.setText("Accounts and their Limits");
-
-        jTableAccounts.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Username", "Password", "Account Limit", "Class"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane21.setViewportView(jTableAccounts);
-
-        javax.swing.GroupLayout jPanel60Layout = new javax.swing.GroupLayout(jPanel60);
-        jPanel60.setLayout(jPanel60Layout);
-        jPanel60Layout.setHorizontalGroup(
-            jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel60Layout.createSequentialGroup()
-                .addGroup(jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel60Layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(jLabel131))
-                    .addGroup(jPanel60Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 854, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel60Layout.setVerticalGroup(
-            jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel60Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel131)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
-        jPanel59.setLayout(jPanel59Layout);
-        jPanel59Layout.setHorizontalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel59Layout.setVerticalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanelUsers.add(jPanel59, java.awt.BorderLayout.CENTER);
-
-        MainPanel.add(jPanelUsers, "card34");
 
         jPanelsalesstockupdate.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanelsalesstockupdate.setPreferredSize(new java.awt.Dimension(1010, 840));
@@ -17754,11 +17619,6 @@ public class NewJFrame extends javax.swing.JFrame {
             case KeyEvent.VK_ENTER:
                 DefaultTableModel moderode = (DefaultTableModel) jTable2.getModel();
                 moderode.addRow(Paster);
-
-//                for (int row_b = 0; row_b < numRows1; row_b++) {
-//                    String numberless = jTextField154.getText();
-//                    jTable3.setValueAt(numberless, row_b, 0);
-//                }
                 break;
             default:
         }
@@ -18983,7 +18843,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox25;
     public static javax.swing.JComboBox<String> jComboBox26;
     public static javax.swing.JComboBox<String> jComboBox27;
-    private javax.swing.JComboBox<String> jComboBox28;
     private javax.swing.JComboBox<String> jComboBox29;
     public static javax.swing.JComboBox<String> jComboBox3;
     public static javax.swing.JComboBox<String> jComboBox30;
@@ -19072,12 +18931,8 @@ public class NewJFrame extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
     public static javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel134;
     public static javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel137;
     private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel139;
@@ -19263,7 +19118,6 @@ public class NewJFrame extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel93;
     public static javax.swing.JLabel jLabel94;
     public static javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
     public static javax.swing.JLabel jLabel97;
     public static javax.swing.JLabel jLabel98;
     public static javax.swing.JLabel jLabel99;
@@ -19347,7 +19201,6 @@ public class NewJFrame extends javax.swing.JFrame {
     public static javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
     public static javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
@@ -19388,9 +19241,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel54;
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
-    private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel60;
     private javax.swing.JPanel jPanel62;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel7Carded;
@@ -19415,13 +19266,11 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelTabpackrpt;
     public static javax.swing.JPanel jPanelTransfer;
     private javax.swing.JPanel jPanelTransferList;
-    private javax.swing.JPanel jPanelUsers;
     private javax.swing.JPanel jPanelWarehouse;
     private javax.swing.JPanel jPanelWithFunctions;
     private javax.swing.JPanel jPanelmodVouch;
     private javax.swing.JPanel jPanelpackDetails;
     private javax.swing.JPanel jPanelsalesstockupdate;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField_Password;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JTextField jProdWarehouse;
@@ -19458,7 +19307,6 @@ public class NewJFrame extends javax.swing.JFrame {
     public static javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
@@ -19534,7 +19382,6 @@ public class NewJFrame extends javax.swing.JFrame {
     public static javax.swing.JTable jTable7;
     public static javax.swing.JTable jTable8;
     public static javax.swing.JTable jTable9;
-    private javax.swing.JTable jTableAccounts;
     private javax.swing.JTable jTable_consumedproduct;
     private javax.swing.JTable jTable_ppack;
     public static javax.swing.JTable jTableavg;
@@ -19665,7 +19512,6 @@ public class NewJFrame extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextField89;
     public static javax.swing.JTextField jTextField9;
     private javax.swing.JTextField jTextField90;
-    private javax.swing.JTextField jTextField91;
     public static javax.swing.JTextField jTextField92;
     private javax.swing.JTextField jTextField93;
     public static javax.swing.JTextField jTextField94;

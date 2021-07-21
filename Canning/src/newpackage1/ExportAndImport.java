@@ -74,8 +74,9 @@ import org.apache.commons.dbutils.DbUtils;
  * @author Stevoski
  */
 public class ExportAndImport extends javax.swing.JFrame {
-    public JLabel patlabel=new JLabel();
-    public JLabel patlabelle=new JLabel();
+
+    public JLabel patlabel = new JLabel();
+    public JLabel patlabelle = new JLabel();
     public static JComboBox<String> categorizer = new JComboBox<>();
     ResultSet rs = null;
     ResultSet rss = null;
@@ -86,6 +87,7 @@ public class ExportAndImport extends javax.swing.JFrame {
     String s1;
     String s2;
     String s3;
+    public Object[][] Paster = {};
 
     /**
      * Creates new form ExportAndImport
@@ -541,13 +543,19 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel27 = new javax.swing.JPanel();
         jPanel48 = new javax.swing.JPanel();
         jScrollPane26 = new javax.swing.JScrollPane();
-        jTable26 = new javax.swing.JTable();
+        main_raw_material = new javax.swing.JTable();
         jPanel46 = new javax.swing.JPanel();
         jScrollPane27 = new javax.swing.JScrollPane();
-        jTable27 = new javax.swing.JTable();
+        main_package = new javax.swing.JTable();
+        jButton48 = new javax.swing.JButton();
+        jButton49 = new javax.swing.JButton();
         jPanel44 = new javax.swing.JPanel();
         jScrollPane25 = new javax.swing.JScrollPane();
-        jTable23 = new javax.swing.JTable();
+        mainproduct = new javax.swing.JTable();
+        jButton43 = new javax.swing.JButton();
+        jButton45 = new javax.swing.JButton();
+        jButton46 = new javax.swing.JButton();
+        jButton47 = new javax.swing.JButton();
         ProductsalesPanel = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
@@ -596,6 +604,20 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel40 = new javax.swing.JPanel();
         jTabbedPane4 = new javax.swing.JTabbedPane();
         jTabbedPane5 = new javax.swing.JTabbedPane();
+        jPanelUsers = new javax.swing.JPanel();
+        jPanel52 = new javax.swing.JPanel();
+        jLabel133 = new javax.swing.JLabel();
+        jLabel110 = new javax.swing.JLabel();
+        jTextField91 = new javax.swing.JTextField();
+        jLabel134 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jLabel136 = new javax.swing.JLabel();
+        jComboBox28 = new javax.swing.JComboBox<>();
+        jPanel59 = new javax.swing.JPanel();
+        jPanel60 = new javax.swing.JPanel();
+        jLabel131 = new javax.swing.JLabel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        jTableAccounts = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -1323,11 +1345,11 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addGroup(raw_material_receptionLayout.createSequentialGroup()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 1250, Short.MAX_VALUE))
         );
         raw_material_receptionLayout.setVerticalGroup(
             raw_material_receptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -1354,7 +1376,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addGroup(past_and_sort_reportLayout.createSequentialGroup()
                         .addGap(255, 255, 255)
                         .addComponent(jButton36)))
-                .addContainerGap(534, Short.MAX_VALUE))
+                .addContainerGap(1010, Short.MAX_VALUE))
         );
         past_and_sort_reportLayout.setVerticalGroup(
             past_and_sort_reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1363,7 +1385,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jLabel80)
                 .addGap(463, 463, 463)
                 .addComponent(jButton36)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(417, Short.MAX_VALUE))
         );
 
         jPanel26.setBackground(new java.awt.Color(110, 89, 222));
@@ -1708,13 +1730,13 @@ public class ExportAndImport extends javax.swing.JFrame {
         Traceability.setLayout(TraceabilityLayout);
         TraceabilityLayout.setHorizontalGroup(
             TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1027, Short.MAX_VALUE)
+            .addGap(0, 1496, Short.MAX_VALUE)
             .addGroup(TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(Traceability_report))
         );
         TraceabilityLayout.setVerticalGroup(
             TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 928, Short.MAX_VALUE)
             .addGroup(TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(Traceability_report))
         );
@@ -3765,8 +3787,10 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addComponent(jLabel124, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel125, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vdate, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vdate, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel36Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel125, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(pelec, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3812,15 +3836,15 @@ public class ExportAndImport extends javax.swing.JFrame {
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel36Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(jLabel124))
-                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel126, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel128)
-                                    .addComponent(jLabel155)
-                                    .addComponent(jLabel17))
-                                .addComponent(jLabel125, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel124)
+                                    .addComponent(jLabel125, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                                .addComponent(jLabel126, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel128)
+                                .addComponent(jLabel155)
+                                .addComponent(jLabel17)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pvoucher, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3848,7 +3872,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, 81, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -3856,7 +3880,7 @@ public class ExportAndImport extends javax.swing.JFrame {
 
         jPanel27.setLayout(new java.awt.BorderLayout());
 
-        jTable26.setModel(new javax.swing.table.DefaultTableModel(
+        main_raw_material.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -3872,30 +3896,30 @@ public class ExportAndImport extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable26.addMouseListener(new java.awt.event.MouseAdapter() {
+        main_raw_material.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable26MouseClicked(evt);
+                main_raw_materialMouseClicked(evt);
             }
         });
-        jScrollPane26.setViewportView(jTable26);
+        jScrollPane26.setViewportView(main_raw_material);
 
         javax.swing.GroupLayout jPanel48Layout = new javax.swing.GroupLayout(jPanel48);
         jPanel48.setLayout(jPanel48Layout);
         jPanel48Layout.setHorizontalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 945, Short.MAX_VALUE)
+            .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
         );
         jPanel48Layout.setVerticalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel48Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jPanel27.add(jPanel48, java.awt.BorderLayout.CENTER);
 
-        jTable27.setModel(new javax.swing.table.DefaultTableModel(
+        main_package.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -3911,59 +3935,100 @@ public class ExportAndImport extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable27.addMouseListener(new java.awt.event.MouseAdapter() {
+        main_package.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable27MouseClicked(evt);
+                main_packageMouseClicked(evt);
             }
         });
-        jScrollPane27.setViewportView(jTable27);
+        jScrollPane27.setViewportView(main_package);
+
+        jButton48.setText("Save All");
+
+        jButton49.setText("Discard Production");
 
         javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 945, Short.MAX_VALUE)
+            .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
+            .addGroup(jPanel46Layout.createSequentialGroup()
+                .addGap(420, 420, 420)
+                .addComponent(jButton48)
+                .addGap(89, 89, 89)
+                .addComponent(jButton49)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel46Layout.setVerticalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel46Layout.createSequentialGroup()
                 .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton48)
+                    .addComponent(jButton49)))
         );
 
         jPanel27.add(jPanel46, java.awt.BorderLayout.PAGE_END);
 
-        jTable23.setModel(new javax.swing.table.DefaultTableModel(
+        mainproduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Product Name", "Quantity", "Batch/No", "Waste", "Monthly Hrs", "Seasonal Hrs", "Permanent Hrs", "Overtime Monthly", "Overtime Seasonal", "Overtime permanent"
+                "ID", "Product Name", "Quantity", "Batch/No", "Waste", "Monthly Hrs", "Seasonal Hrs", "Permanent Hrs", "Overtime Monthly", "Overtime Seasonal", "Overtime permanent", "Split Group"
             }
         ));
-        jTable23.addMouseListener(new java.awt.event.MouseAdapter() {
+        mainproduct.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable23MouseClicked(evt);
+                mainproductMouseClicked(evt);
             }
         });
-        jTable23.addKeyListener(new java.awt.event.KeyAdapter() {
+        mainproduct.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTable23KeyPressed(evt);
+                mainproductKeyPressed(evt);
             }
         });
-        jScrollPane25.setViewportView(jTable23);
+        jScrollPane25.setViewportView(mainproduct);
+
+        jButton43.setText("Save");
+        jButton43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton43ActionPerformed(evt);
+            }
+        });
+
+        jButton45.setText("Delete");
+
+        jButton46.setText("Split");
+
+        jButton47.setText("BOM");
 
         javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
         jPanel44.setLayout(jPanel44Layout);
         jPanel44Layout.setHorizontalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 945, Short.MAX_VALUE)
+            .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
+            .addGroup(jPanel44Layout.createSequentialGroup()
+                .addGap(389, 389, 389)
+                .addComponent(jButton43)
+                .addGap(33, 33, 33)
+                .addComponent(jButton45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton47)
+                .addContainerGap(270, Short.MAX_VALUE))
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel44Layout.createSequentialGroup()
                 .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton43)
+                    .addComponent(jButton45)
+                    .addComponent(jButton46)
+                    .addComponent(jButton47)))
         );
 
         jPanel27.add(jPanel44, java.awt.BorderLayout.PAGE_START);
@@ -4417,6 +4482,125 @@ public class ExportAndImport extends javax.swing.JFrame {
         jTabbedPane3.addTab("Above Margin productions", jTabbedPane4);
         jTabbedPane3.addTab("Monthly Summary Reports", jTabbedPane5);
 
+        jPanelUsers.setMaximumSize(new java.awt.Dimension(500, 500));
+        jPanelUsers.setMinimumSize(new java.awt.Dimension(500, 500));
+        jPanelUsers.setLayout(new java.awt.BorderLayout());
+
+        jPanel52.setPreferredSize(new java.awt.Dimension(150, 530));
+
+        jLabel133.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel133.setText("Create Account");
+
+        jLabel110.setText("Username");
+
+        jLabel134.setText("Password");
+
+        jLabel136.setText("Account Limit");
+
+        jComboBox28.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPanel52Layout = new javax.swing.GroupLayout(jPanel52);
+        jPanel52.setLayout(jPanel52Layout);
+        jPanel52Layout.setHorizontalGroup(
+            jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel52Layout.createSequentialGroup()
+                .addGroup(jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel52Layout.createSequentialGroup()
+                        .addContainerGap(23, Short.MAX_VALUE)
+                        .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel52Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel110, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addComponent(jTextField91)
+            .addComponent(jPasswordField1)
+            .addGroup(jPanel52Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel134)
+                    .addComponent(jLabel136))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jComboBox28, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel52Layout.setVerticalGroup(
+            jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel52Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel133)
+                .addGap(152, 152, 152)
+                .addComponent(jLabel110)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField91, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel134)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel136)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanelUsers.add(jPanel52, java.awt.BorderLayout.LINE_START);
+
+        jLabel131.setText("Accounts and their Limits");
+
+        jTableAccounts.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Username", "Password", "Account Limit", "Class"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane21.setViewportView(jTableAccounts);
+
+        javax.swing.GroupLayout jPanel60Layout = new javax.swing.GroupLayout(jPanel60);
+        jPanel60.setLayout(jPanel60Layout);
+        jPanel60Layout.setHorizontalGroup(
+            jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel60Layout.createSequentialGroup()
+                .addGroup(jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel60Layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(jLabel131))
+                    .addGroup(jPanel60Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 854, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel60Layout.setVerticalGroup(
+            jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel60Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel131)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
+        jPanel59.setLayout(jPanel59Layout);
+        jPanel59Layout.setHorizontalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel59Layout.setVerticalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanelUsers.add(jPanel59, java.awt.BorderLayout.CENTER);
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -4462,6 +4646,11 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jTabbedPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 1326, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 1259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4505,6 +4694,11 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jTabbedPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanelUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -6466,7 +6660,7 @@ public class ExportAndImport extends javax.swing.JFrame {
     private void jButton102ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton102ActionPerformed
         String phakto = jTextLogin.getText();
         String pprod = jLabel83.getText();
-                String patlabe = patlabelle.getText();
+        String patlabe = patlabelle.getText();
         String qty = jTextppqty.getText();
         String phid = (String) jComboing.getSelectedItem();
 
@@ -6781,21 +6975,35 @@ public class ExportAndImport extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton51ActionPerformed
 
-    private void jTable23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable23MouseClicked
+    private void mainproductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainproductMouseClicked
+        int numRows1 = mainproduct.getRowCount();
+        for (int row_b = 0; row_b < numRows1; row_b++) {
+            String numberless = pvoucher.getText();
+            mainproduct.setValueAt(numberless, row_b, 0);
+        }
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable23MouseClicked
+    }//GEN-LAST:event_mainproductMouseClicked
 
-    private void jTable23KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable23KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTable23KeyPressed
+    private void mainproductKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_mainproductKeyPressed
+//  int numRows1 = mainproduct.getRowCount();
+        switch (evt.getKeyCode()) {
+            case KeyEvent.VK_ENTER:
+                DefaultTableModel moderode = (DefaultTableModel) mainproduct.getModel();
+                moderode.addRow(Paster);
+                break;
+            default:
+        }
 
-    private void jTable26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable26MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable26MouseClicked
+    }//GEN-LAST:event_mainproductKeyPressed
 
-    private void jTable27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable27MouseClicked
+    private void main_raw_materialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_main_raw_materialMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTable27MouseClicked
+    }//GEN-LAST:event_main_raw_materialMouseClicked
+
+    private void main_packageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_main_packageMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_main_packageMouseClicked
 
     private void jComboBox33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox33ActionPerformed
         String decombo = (String) jComboBox33.getSelectedItem();
@@ -7290,117 +7498,111 @@ public class ExportAndImport extends javax.swing.JFrame {
     }//GEN-LAST:event_engwaterActionPerformed
 
     private void jButton103ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton103ActionPerformed
- String patlabe = patlabelle.getText();
- String minprod=  jLabel83.getText();
- switch (patlabe){
-     case "Ingredient":
-          int yesNo = JOptionPane.showConfirmDialog(null, "Do You Really Want To DELETE this data?", "Delete", JOptionPane.YES_NO_OPTION);
-        if (yesNo == 0) {            
-            if (!patlabel.getText().equals("")) {
-                try (PreparedStatement pers = db_Connection.getInstance().prepareStatement("DELETE FROM ingredbom WHERE ingredient = ? and product=?")) {
-                    String id = patlabel.getText();
-                    pers.setString(1, id);
-                    pers.setString(2, minprod);
-                    pers.executeUpdate();
-                    //TABLE PANEL ADD
-                    try {
-                        DefaultTableModel model = (DefaultTableModel) jTable_consumedproduct.getModel();
-                        try {
-                            int z3 = model.getRowCount();
-                            for (int lu3 = 0; lu3 <= z3; ++lu3) {
-                                model.removeRow(0);
-                            }
-                        } catch (Exception e) {
-                        }
-                        try (PreparedStatement ps7 = db_Connection.getInstance().prepareStatement("SELECT * FROM bom_ingredients where product=?;")) {
+        String patlabe = patlabelle.getText();
+        String minprod = jLabel83.getText();
+        switch (patlabe) {
+            case "Ingredient":
+                int yesNo = JOptionPane.showConfirmDialog(null, "Do You Really Want To DELETE this data?", "Delete", JOptionPane.YES_NO_OPTION);
+                if (yesNo == 0) {
+                    if (!patlabel.getText().equals("")) {
+                        try (PreparedStatement pers = db_Connection.getInstance().prepareStatement("DELETE FROM ingredbom WHERE ingredient = ? and product=?")) {
+                            String id = patlabel.getText();
+                            pers.setString(1, id);
+                            pers.setString(2, minprod);
+                            pers.executeUpdate();
+                            //TABLE PANEL ADD
+                            try {
+                                DefaultTableModel model = (DefaultTableModel) jTable_consumedproduct.getModel();
+                                try {
+                                    int z3 = model.getRowCount();
+                                    for (int lu3 = 0; lu3 <= z3; ++lu3) {
+                                        model.removeRow(0);
+                                    }
+                                } catch (Exception e) {
+                                }
+                                try (PreparedStatement ps7 = db_Connection.getInstance().prepareStatement("SELECT * FROM bom_ingredients where product=?;")) {
 //                             ps7.setString(1, id);
-                              ps7.setString(2, minprod);
-                            rs = ps7.executeQuery();
-                            while (rs.next()) {
-                                model.addRow(new Object[]{ rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getDouble("price")});
-                           }
-                    rs.close();
-                            ps7.close();
-                        } catch (Exception e) {
-                            //                            e.printStackTrace();
-                            JOptionPane.showMessageDialog(this, "Error in connectivity");
-                        }
+                                    ps7.setString(2, minprod);
+                                    rs = ps7.executeQuery();
+                                    while (rs.next()) {
+                                        model.addRow(new Object[]{rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getDouble("price")});
+                                    }
+                                    rs.close();
+                                    ps7.close();
+                                } catch (Exception e) {
+                                    //                            e.printStackTrace();
+                                    JOptionPane.showMessageDialog(this, "Error in connectivity");
+                                }
 
-                    } catch (Exception e) {
-                        //                        e.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Invalid Entry or field must be completely filled", "message", 2);
-                    }
-                    pers.close();
-                    JOptionPane.showMessageDialog(null, "The Data Was Successfully Deleted!");
-                } catch (Exception e) {
-                    Logger.getLogger(NewJFrame.class
-                            .getName()).log(Level.SEVERE, null, e);
-
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Could NOT Delete The Data! No product Selected!");
-            }
-        }
-         
-         break;
-     case "Raw Material":
-          int yesNoe = JOptionPane.showConfirmDialog(null, "Do You Really Want To DELETE this data?", "Delete", JOptionPane.YES_NO_OPTION);
-        if (yesNoe == 0) {            
-            if (!patlabel.getText().equals("")) {
-                try (PreparedStatement pers = db_Connection.getInstance().prepareStatement("DELETE FROM rawbom WHERE raw_material = ? and product_name=?")) {
-                    String id = patlabel.getText();
-                    pers.setString(1, id);
-                    pers.setString(2, minprod);
-                    pers.executeUpdate();
-                    //TABLE PANEL ADD
-                    try {
-                        DefaultTableModel model = (DefaultTableModel) jTable_consumedproduct.getModel();
-                        try {
-                            int z3 = model.getRowCount();
-                            for (int lu3 = 0; lu3 <= z3; ++lu3) {
-                                model.removeRow(0);
+                            } catch (Exception e) {
+                                //                        e.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Invalid Entry or field must be completely filled", "message", 2);
                             }
+                            pers.close();
+                            JOptionPane.showMessageDialog(null, "The Data Was Successfully Deleted!");
                         } catch (Exception e) {
-                        }
-                        try (PreparedStatement ps7 = db_Connection.getInstance().prepareStatement("SELECT * FROM bom_ingredients where product=?;")) {
-//                             ps7.setString(1, id);
-                              ps7.setString(2, minprod);
-                            rs = ps7.executeQuery();
-                            while (rs.next()) {
-                                model.addRow(new Object[]{ rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getDouble("price")});
-                           }
-                    rs.close();
-                            ps7.close();
-                        } catch (Exception e) {
-                            //                            e.printStackTrace();
-                            JOptionPane.showMessageDialog(this, "Error in connectivity");
-                        }
+                            Logger.getLogger(NewJFrame.class
+                                    .getName()).log(Level.SEVERE, null, e);
 
-                    } catch (Exception e) {
-                        //                        e.printStackTrace();
-                        JOptionPane.showMessageDialog(null, "Invalid Entry or field must be completely filled", "message", 2);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Could NOT Delete The Data! No product Selected!");
                     }
-                    pers.close();
-                    JOptionPane.showMessageDialog(null, "The Data Was Successfully Deleted!");
-                } catch (Exception e) {
-                    Logger.getLogger(NewJFrame.class
-                            .getName()).log(Level.SEVERE, null, e);
-
                 }
-            } else {
-                JOptionPane.showMessageDialog(null, "Could NOT Delete The Data! No product Selected!");
-            }
+
+                break;
+            case "Raw Material":
+                int yesNoe = JOptionPane.showConfirmDialog(null, "Do You Really Want To DELETE this data?", "Delete", JOptionPane.YES_NO_OPTION);
+                if (yesNoe == 0) {
+                    if (!patlabel.getText().equals("")) {
+                        try (PreparedStatement pers = db_Connection.getInstance().prepareStatement("DELETE FROM rawbom WHERE raw_material = ? and product_name=?")) {
+                            String id = patlabel.getText();
+                            pers.setString(1, id);
+                            pers.setString(2, minprod);
+                            pers.executeUpdate();
+                            //TABLE PANEL ADD
+                            try {
+                                DefaultTableModel model = (DefaultTableModel) jTable_consumedproduct.getModel();
+                                try {
+                                    int z3 = model.getRowCount();
+                                    for (int lu3 = 0; lu3 <= z3; ++lu3) {
+                                        model.removeRow(0);
+                                    }
+                                } catch (Exception e) {
+                                }
+                                try (PreparedStatement ps7 = db_Connection.getInstance().prepareStatement("SELECT * FROM bom_ingredients where product=?;")) {
+//                             ps7.setString(1, id);
+                                    ps7.setString(2, minprod);
+                                    rs = ps7.executeQuery();
+                                    while (rs.next()) {
+                                        model.addRow(new Object[]{rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getDouble("price")});
+                                    }
+                                    rs.close();
+                                    ps7.close();
+                                } catch (Exception e) {
+                                    //                            e.printStackTrace();
+                                    JOptionPane.showMessageDialog(this, "Error in connectivity");
+                                }
+
+                            } catch (Exception e) {
+                                //                        e.printStackTrace();
+                                JOptionPane.showMessageDialog(null, "Invalid Entry or field must be completely filled", "message", 2);
+                            }
+                            pers.close();
+                            JOptionPane.showMessageDialog(null, "The Data Was Successfully Deleted!");
+                        } catch (Exception e) {
+                            Logger.getLogger(NewJFrame.class
+                                    .getName()).log(Level.SEVERE, null, e);
+
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Could NOT Delete The Data! No product Selected!");
+                    }
+                }
+
+                break;
+
         }
-         
-         break;
-                 
-     
-     
- }
-        
-        
-        
-       
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton103ActionPerformed
@@ -7408,10 +7610,10 @@ public class ExportAndImport extends javax.swing.JFrame {
     private void jTable_consumedproductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_consumedproductMouseClicked
 
         int row = jTable_consumedproduct.getSelectedRow();
-            String tableclick = (jTable_consumedproduct.getModel().getValueAt(row, 1).toString());
-            String tableclicker = (jTable_consumedproduct.getModel().getValueAt(row, 0).toString());
-            patlabel.setText(tableclick);
-            patlabelle.setText(tableclicker);
+        String tableclick = (jTable_consumedproduct.getModel().getValueAt(row, 1).toString());
+        String tableclicker = (jTable_consumedproduct.getModel().getValueAt(row, 0).toString());
+        patlabel.setText(tableclick);
+        patlabelle.setText(tableclicker);
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable_consumedproductMouseClicked
 
@@ -7439,62 +7641,62 @@ public class ExportAndImport extends javax.swing.JFrame {
                 }
                 while (rs.next()) {
                     modulartor.addRow(new Object[]{rs.getString("product"), rs.getDouble("qty"), rs.getString("unit")});
-            }
-             psclikk.close();
-             rs.close();
+                }
+                psclikk.close();
+                rs.close();
                 try (PreparedStatement psbom = conclikftt.prepareStatement(rawclik)) {
-                rs = psbom.executeQuery();
+                    rs = psbom.executeQuery();
 
-                DefaultTableModel rawmod = (DefaultTableModel) jTable_consumedproduct.getModel();
-                try {
-                    int z = rawmod.getRowCount();
-                    for (int lue = 0; lue <= z; ++lue) {
-                        rawmod.removeRow(0);
+                    DefaultTableModel rawmod = (DefaultTableModel) jTable_consumedproduct.getModel();
+                    try {
+                        int z = rawmod.getRowCount();
+                        for (int lue = 0; lue <= z; ++lue) {
+                            rawmod.removeRow(0);
+                        }
+                    } catch (Exception e) {
+
                     }
-                } catch (Exception e) {
-
-                }
-                while (rs.next()) {
-                    rawmod.addRow(new Object[]{rs.getString("Category"), rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getString("price")});
-            }
-             psbom.close();
-             rs.close();
-             try (PreparedStatement pacbom = conclikftt.prepareStatement(packclik)) {
-                rs = pacbom.executeQuery();
-
-                DefaultTableModel pacmod = (DefaultTableModel) jTable_ppack.getModel();
-                try {
-                    int z = pacmod.getRowCount();
-                    for (int lue = 0; lue <= z; ++lue) {
-                        pacmod.removeRow(0);
+                    while (rs.next()) {
+                        rawmod.addRow(new Object[]{rs.getString("Category"), rs.getString("ingredient"), rs.getDouble("quantity"), rs.getString("unit"), rs.getString("price")});
                     }
-                } catch (Exception e) {
+                    psbom.close();
+                    rs.close();
+                    try (PreparedStatement pacbom = conclikftt.prepareStatement(packclik)) {
+                        rs = pacbom.executeQuery();
 
-                }
-                while (rs.next()) {
-                    pacmod.addRow(new Object[]{rs.getString("product"),rs.getString("package"), rs.getDouble("package_qty"), rs.getString("label"), rs.getDouble("label_qty")});
-            }          
-               pacbom.close();
-               rs.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error connection");
-                            e.printStackTrace();
-        }
-                
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error connection");
-                            e.printStackTrace();
-        }
-                
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error connection");
-                            e.printStackTrace();
-        }
-    }catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error connection");
+                        DefaultTableModel pacmod = (DefaultTableModel) jTable_ppack.getModel();
+                        try {
+                            int z = pacmod.getRowCount();
+                            for (int lue = 0; lue <= z; ++lue) {
+                                pacmod.removeRow(0);
+                            }
+                        } catch (Exception e) {
+
+                        }
+                        while (rs.next()) {
+                            pacmod.addRow(new Object[]{rs.getString("product"), rs.getString("package"), rs.getDouble("package_qty"), rs.getString("label"), rs.getDouble("label_qty")});
+                        }
+                        pacbom.close();
+                        rs.close();
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "Error connection");
                         e.printStackTrace();
-    }
-    // TODO add your handling code here:
+                    }
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Error connection");
+                    e.printStackTrace();
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error connection");
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error connection");
+            e.printStackTrace();
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_bomTableMouseClicked
 
     private void jButton44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton44ActionPerformed
@@ -7504,15 +7706,15 @@ public class ExportAndImport extends javax.swing.JFrame {
     private void jTable_ppackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_ppackMouseClicked
 
         int row = jTable_ppack.getSelectedRow();
-            String tableclick = (jTable_ppack.getModel().getValueAt(row, 0).toString());
-            jLabel109.setText(tableclick);
+        String tableclick = (jTable_ppack.getModel().getValueAt(row, 0).toString());
+        jLabel109.setText(tableclick);
         // TODO add your handling code here:
     }//GEN-LAST:event_jTable_ppackMouseClicked
 
     private void jButton105ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton105ActionPerformed
-String minprod=  jLabel83.getText();
+        String minprod = jLabel83.getText();
         int yesNo = JOptionPane.showConfirmDialog(null, "Do You Really Want To DELETE this data?", "Delete", JOptionPane.YES_NO_OPTION);
-        if (yesNo == 0) {            
+        if (yesNo == 0) {
             if (!jLabel109.getText().equals("")) {
                 try (PreparedStatement pers = db_Connection.getInstance().prepareStatement("DELETE FROM bom_package WHERE package = ? and product=?")) {
                     String id = jLabel109.getText();
@@ -7530,13 +7732,13 @@ String minprod=  jLabel83.getText();
                         } catch (Exception e) {
                         }
                         try (PreparedStatement ps7 = db_Connection.getInstance().prepareStatement("SELECT * FROM bom_package where package = ? and product=?;")) {
-                             ps7.setString(1, id);
-                              ps7.setString(2, minprod);
+                            ps7.setString(1, id);
+                            ps7.setString(2, minprod);
                             rs = ps7.executeQuery();
                             while (rs.next()) {
                                 model.addRow(new Object[]{rs.getString("product"), rs.getString("package"), rs.getDouble("package_qty"), rs.getString("label"), rs.getDouble("label_qty")});
-                           }
-                    rs.close();
+                            }
+                            rs.close();
                             ps7.close();
                         } catch (Exception e) {
                             //                            e.printStackTrace();
@@ -7558,14 +7760,69 @@ String minprod=  jLabel83.getText();
             }
         }
 
-
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton105ActionPerformed
 
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
+        try {
+            Connection connpAST = (Connection) db_Connection.getInstance();
+            connpAST.setAutoCommit(false);
+            int erowsi = mainproduct.getRowCount();
+
+            String querycoh = "insert into productproduction (ProductionID, voucher_no, product_name, quantity, factory, groupe, manpower_hrs, seasonal, permanent, splitter, total_manpower, total_seasonal, total_permanent, waste, addedby, price, stock_bf, stock_cf, amount, date, status, batch_no) VALUES (?,?,?,?,?,?,?,?)";
+            PreparedStatement psyAST = db_Connection.getInstance().prepareStatement(querycoh);
+            for (int row = 0; row < erowsi; row++) {
+                String pid = (String) mainproduct.getValueAt(row, 0);
+                Integer pid1 = Integer.valueOf(pid);
+                String tin = (String) mainproduct.getValueAt(row, 1);
+                String qtyin = (String) mainproduct.getValueAt(row, 2);
+                Double qtyin1 = Double.valueOf(qtyin);
+                String batchno = (String) mainproduct.getValueAt(row, 3);
+                String prodwaste = (String) mainproduct.getValueAt(row, 4);
+                Double prwaste = Double.valueOf(prodwaste);
+                String monthhrs = (String) mainproduct.getValueAt(row, 5);
+                Double monhrs = Double.valueOf(monthhrs);
+                String seashrs = (String) mainproduct.getValueAt(row, 6);
+                Double seahrs = Double.valueOf(seashrs);
+                String permhrs = (String) mainproduct.getValueAt(row, 7);
+                Double perhrs = Double.valueOf(permhrs);
+                String otimon = (String) mainproduct.getValueAt(row, 8);
+                Double otmon = Double.valueOf(otimon);
+                String otiseas = (String) mainproduct.getValueAt(row, 9);
+                Double otseas = Double.valueOf(otiseas);
+                String otiper = (String) mainproduct.getValueAt(row, 10);
+                Double otper = Double.valueOf(otiper);
+                String progrp = (String) mainproduct.getValueAt(row, 11);
+                              
+                psyAST.setInt(1, pid1);
+                psyAST.setString(2, tin);
+                psyAST.setDouble(3, qtyin1);
+                psyAST.setString(4, batchno);
+                psyAST.setDouble(5, prwaste);
+                psyAST.setDouble(6, monhrs);
+                psyAST.setDouble(7, seahrs);
+                psyAST.setDouble(8, perhrs);
+                 psyAST.setDouble(9, otmon);
+                  psyAST.setDouble(10, otseas);
+                   psyAST.setDouble(11, otper);
+                    psyAST.setString(12, progrp);
+                 
+                psyAST.addBatch();
+            }
+            psyAST.executeBatch();
+            connpAST.commit();
+            JOptionPane.showMessageDialog(this, "Data Successfully added");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Invalid Entry");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton43ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -7579,33 +7836,17 @@ public static void main(String args[]) {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ExportAndImport
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExportAndImport.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ExportAndImport
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExportAndImport.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ExportAndImport
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExportAndImport.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ExportAndImport
-
-.class  
-
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExportAndImport.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -7693,7 +7934,13 @@ public static void main(String args[]) {
     public static javax.swing.JButton jButton40;
     public static javax.swing.JButton jButton41;
     private javax.swing.JButton jButton42;
+    private javax.swing.JButton jButton43;
     private javax.swing.JButton jButton44;
+    private javax.swing.JButton jButton45;
+    private javax.swing.JButton jButton46;
+    private javax.swing.JButton jButton47;
+    private javax.swing.JButton jButton48;
+    private javax.swing.JButton jButton49;
     private javax.swing.JButton jButton5;
     public static javax.swing.JButton jButton50;
     public static javax.swing.JButton jButton51;
@@ -7729,6 +7976,7 @@ public static void main(String args[]) {
     private javax.swing.JComboBox<String> jComboBox20;
     public static javax.swing.JComboBox<String> jComboBox21;
     public static javax.swing.JComboBox<String> jComboBox22;
+    private javax.swing.JComboBox<String> jComboBox28;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox33;
     public static javax.swing.JComboBox jComboBox39;
@@ -7766,6 +8014,7 @@ public static void main(String args[]) {
     public static javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel12;
     public static javax.swing.JLabel jLabel124;
     public static javax.swing.JLabel jLabel125;
@@ -7773,7 +8022,11 @@ public static void main(String args[]) {
     public static javax.swing.JLabel jLabel127;
     public static javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel131;
     public static javax.swing.JLabel jLabel132;
+    private javax.swing.JLabel jLabel133;
+    private javax.swing.JLabel jLabel134;
+    private javax.swing.JLabel jLabel136;
     public static javax.swing.JLabel jLabel137;
     public static javax.swing.JLabel jLabel138;
     public static javax.swing.JLabel jLabel139;
@@ -7960,7 +8213,10 @@ public static void main(String args[]) {
     public static javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel60;
     private javax.swing.JPanel jPanel7;
     public static javax.swing.JPanel jPanel8;
     public static javax.swing.JPanel jPanel9;
@@ -7972,8 +8228,10 @@ public static void main(String args[]) {
     public static javax.swing.JPanel jPanelInvoice;
     private javax.swing.JPanel jPanelReport;
     public static javax.swing.JPanel jPanelTabpacking;
+    private javax.swing.JPanel jPanelUsers;
     public static javax.swing.JPanel jPanelproforma;
     private javax.swing.JPanel jPanelrough;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
@@ -7991,6 +8249,7 @@ public static void main(String args[]) {
     public static javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
     public static javax.swing.JScrollPane jScrollPane24;
     public static javax.swing.JScrollPane jScrollPane25;
     public static javax.swing.JScrollPane jScrollPane26;
@@ -8032,11 +8291,8 @@ public static void main(String args[]) {
     public static javax.swing.JTable jTable16;
     private javax.swing.JTable jTable2;
     public static javax.swing.JTable jTable20;
-    public static javax.swing.JTable jTable23;
     public static javax.swing.JTable jTable24;
     public static javax.swing.JTable jTable25;
-    public static javax.swing.JTable jTable26;
-    public static javax.swing.JTable jTable27;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable30;
     private javax.swing.JTable jTable31;
@@ -8050,6 +8306,7 @@ public static void main(String args[]) {
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
+    private javax.swing.JTable jTableAccounts;
     public static javax.swing.JTable jTable_consumedproduct;
     public static javax.swing.JTable jTable_ppack;
     private javax.swing.JTextField jTextField1;
@@ -8096,6 +8353,7 @@ public static void main(String args[]) {
     public static javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextField91;
     public static javax.swing.JTextField jText_lblqty;
     public static javax.swing.JTextField jText_packageqty;
     public static javax.swing.JTextField jTextpaqty;
@@ -8106,6 +8364,9 @@ public static void main(String args[]) {
     public static javax.swing.JTextField jsalesQty;
     public static javax.swing.JTextField jsalesbuyer;
     public static javax.swing.JTextField m_content1;
+    public static javax.swing.JTable main_package;
+    public static javax.swing.JTable main_raw_material;
+    public static javax.swing.JTable mainproduct;
     public static javax.swing.JPanel past_and_sort_report;
     public static javax.swing.JTextField pbriq;
     public static javax.swing.JTextField pdies;
