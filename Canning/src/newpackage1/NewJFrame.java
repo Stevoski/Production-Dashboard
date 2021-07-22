@@ -5578,7 +5578,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel207)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(warehousiing_date, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -18118,15 +18118,17 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox30ActionPerformed
 
     private void jMenuItem46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem46ActionPerformed
+        MainPanel.removeAll();
+        MainPanel.add(IngFormer);
+        MainPanel.repaint();
+        MainPanel.revalidate();
+        
         IngFormer.removeAll();
         IngFormer.add(ExportAndImport.SummaryPanel);
         IngFormer.repaint();
         IngFormer.revalidate();
 
-        MainPanel.removeAll();
-        MainPanel.add(IngFormer);
-        MainPanel.repaint();
-        MainPanel.revalidate();
+        
 
 //        BorderLayout borderlayout = new BorderLayout();
 //        JPanel monthprodcost = new JPanel();

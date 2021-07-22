@@ -700,9 +700,14 @@ public class ExportAndImport extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1024, 800));
 
         jPanel5.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel5.setMinimumSize(new java.awt.Dimension(900, 500));
+        jPanel5.setPreferredSize(new java.awt.Dimension(1000, 850));
+        jPanel5.setLayout(new java.awt.CardLayout());
 
+        jPanelInvoice.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanelInvoice.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -810,7 +815,10 @@ public class ExportAndImport extends javax.swing.JFrame {
         jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Emulsion Flavours", "Flavours", "Fragrances" }));
         jPanelInvoice.add(jComboBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 190, 30));
 
+        jPanel5.add(jPanelInvoice, "card2");
+
         Rawreception.setDividerLocation(450);
+        Rawreception.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel26.setText("MATERIAL ISSUE");
@@ -940,7 +948,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton27)
                     .addComponent(jButton28))
-                .addContainerGap(649, Short.MAX_VALUE))
+                .addContainerGap(264, Short.MAX_VALUE))
         );
 
         Rawreception.setLeftComponent(jPanel10);
@@ -969,7 +977,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                         .addComponent(jScrollPane5)
                         .addContainerGap())
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
                         .addGap(190, 190, 190))))
         );
         jPanel11Layout.setVerticalGroup(
@@ -978,12 +986,15 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel30)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 883, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         Rawreception.setRightComponent(jPanel11);
 
+        jPanel5.add(Rawreception, "card3");
+
+        SummaryPanel.setPreferredSize(new java.awt.Dimension(800, 600));
         SummaryPanel.setLayout(new java.awt.BorderLayout());
 
         jTable16.setModel(new javax.swing.table.DefaultTableModel(
@@ -1021,7 +1032,7 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel38.setLayout(jPanel38Layout);
         jPanel38Layout.setHorizontalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel51, javax.swing.GroupLayout.DEFAULT_SIZE, 1232, Short.MAX_VALUE)
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1062,7 +1073,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jComboBox22, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jButton40)
-                .addContainerGap(1151, Short.MAX_VALUE))
+                .addContainerGap(719, Short.MAX_VALUE))
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1079,7 +1090,9 @@ public class ExportAndImport extends javax.swing.JFrame {
 
         SummaryPanel.add(jPanel39, java.awt.BorderLayout.PAGE_START);
 
-        raw_material_reception.setPreferredSize(new java.awt.Dimension(1020, 490));
+        jPanel5.add(SummaryPanel, "card4");
+
+        raw_material_reception.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jPanel8.setBackground(new java.awt.Color(54, 33, 89));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1309,7 +1322,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                                 .addComponent(jComboBox14, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jComboBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 127, Short.MAX_VALUE))
+                        .addGap(0, 339, Short.MAX_VALUE))
                     .addComponent(jScrollPane16))
                 .addContainerGap())
         );
@@ -1332,7 +1345,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addComponent(jButton25)
                     .addComponent(jButton26))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1345,15 +1358,17 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addGroup(raw_material_receptionLayout.createSequentialGroup()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 1250, Short.MAX_VALUE))
+                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         raw_material_receptionLayout.setVerticalGroup(
             raw_material_receptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        past_and_sort_report.setPreferredSize(new java.awt.Dimension(1020, 681));
+        jPanel5.add(raw_material_reception, "card5");
+
+        past_and_sort_report.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLabel80.setText("jLabel80");
 
@@ -1376,7 +1391,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addGroup(past_and_sort_reportLayout.createSequentialGroup()
                         .addGap(255, 255, 255)
                         .addComponent(jButton36)))
-                .addContainerGap(1010, Short.MAX_VALUE))
+                .addContainerGap(746, Short.MAX_VALUE))
         );
         past_and_sort_reportLayout.setVerticalGroup(
             past_and_sort_reportLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1385,8 +1400,12 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jLabel80)
                 .addGap(463, 463, 463)
                 .addComponent(jButton36)
-                .addContainerGap(417, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
+
+        jPanel5.add(past_and_sort_report, "card6");
+
+        previousReception.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jPanel26.setBackground(new java.awt.Color(110, 89, 222));
 
@@ -1519,7 +1538,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                                         .addComponent(supplier1, 0, 202, Short.MAX_VALUE)
                                         .addComponent(w_bridge_no1)
                                         .addComponent(m_content1, javax.swing.GroupLayout.Alignment.TRAILING)))))))
-                .addContainerGap(743, Short.MAX_VALUE))
+                .addContainerGap(479, Short.MAX_VALUE))
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1567,7 +1586,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addComponent(jButton38))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(353, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout previousReceptionLayout = new javax.swing.GroupLayout(previousReception);
@@ -1581,7 +1600,9 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Traceability.setPreferredSize(new java.awt.Dimension(1027, 554));
+        jPanel5.add(previousReception, "card7");
+
+        Traceability.setPreferredSize(new java.awt.Dimension(800, 600));
 
         Traceability_report.setDividerLocation(450);
 
@@ -1646,7 +1667,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jButton30)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 114, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1681,7 +1702,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addComponent(jButton29)
                     .addComponent(jButton30))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1697,14 +1718,14 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGap(211, 211, 211)
                 .addComponent(jLabel60)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(366, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel60)
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap(414, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -1730,18 +1751,21 @@ public class ExportAndImport extends javax.swing.JFrame {
         Traceability.setLayout(TraceabilityLayout);
         TraceabilityLayout.setHorizontalGroup(
             TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1496, Short.MAX_VALUE)
+            .addGap(0, 1232, Short.MAX_VALUE)
             .addGroup(TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(Traceability_report))
         );
         TraceabilityLayout.setVerticalGroup(
             TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 928, Short.MAX_VALUE)
+            .addGap(0, 543, Short.MAX_VALUE)
             .addGroup(TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(Traceability_report))
+                .addComponent(Traceability_report, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE))
         );
 
+        jPanel5.add(Traceability, "card8");
+
         jPanelproforma.setBackground(new java.awt.Color(102, 102, 102));
+        jPanelproforma.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanelproforma.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton3.setText("SAVE");
@@ -1831,6 +1855,9 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanelproforma.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, -1, -1));
         jPanelproforma.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, -70, 530, 490));
 
+        jPanel5.add(jPanelproforma, "card9");
+
+        jPanelExpense.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanelExpense.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -1941,6 +1968,10 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanelExpense.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 430, -1, -1));
         jPanelExpense.add(jTextField44, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 430, 120, 20));
 
+        jPanel5.add(jPanelExpense, "card10");
+
+        bomPanel.setPreferredSize(new java.awt.Dimension(800, 600));
+
         jButton31.setText("CREATE");
 
         jButton32.setText("UPDATE");
@@ -1969,7 +2000,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jButton32)
                 .addGap(18, 18, 18)
                 .addComponent(jButton33)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(437, Short.MAX_VALUE))
         );
 
         bomPanel.setLeftComponent(jPanel21);
@@ -2359,7 +2390,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addGroup(AddBomLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelTabpacking, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 174, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
@@ -2392,7 +2423,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel49Layout.createSequentialGroup()
                 .addComponent(jButton44)
-                .addGap(0, 1330, Short.MAX_VALUE))
+                .addGap(0, 1044, Short.MAX_VALUE))
         );
         jPanel49Layout.setVerticalGroup(
             jPanel49Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2423,13 +2454,13 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel50.setLayout(jPanel50Layout);
         jPanel50Layout.setHorizontalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 1395, Short.MAX_VALUE)
+            .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 1109, Short.MAX_VALUE)
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel50Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -2439,6 +2470,12 @@ public class ExportAndImport extends javax.swing.JFrame {
 
         bomPanel.setRightComponent(jTabbedPane7);
 
+        jPanel5.add(bomPanel, "card11");
+
+        jTabbedPane8.setPreferredSize(new java.awt.Dimension(800, 600));
+        jPanel5.add(jTabbedPane8, "card12");
+
+        jPanelAdvancePayment.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanelAdvancePayment.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDatePayment.setDateFormatString("yyyy-MM-dd");
@@ -2492,6 +2529,9 @@ public class ExportAndImport extends javax.swing.JFrame {
         jLabel74.setText("DATE");
         jPanelAdvancePayment.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 66, -1, 20));
 
+        jPanel5.add(jPanelAdvancePayment, "card13");
+
+        engineering_dpt.setPreferredSize(new java.awt.Dimension(800, 600));
         engineering_dpt.setLayout(new java.awt.BorderLayout());
 
         engdate.setDateFormatString("yyyy,MM,dd");
@@ -2569,7 +2609,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                         .addComponent(jLabel107)
                         .addGap(75, 75, 75)
                         .addComponent(jLabel108)))
-                .addContainerGap(553, Short.MAX_VALUE))
+                .addContainerGap(417, Short.MAX_VALUE))
         );
         jPanel43Layout.setVerticalGroup(
             jPanel43Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2625,7 +2665,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanel45Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel45Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 1348, Short.MAX_VALUE)
+                .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 1212, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel45Layout.setVerticalGroup(
@@ -2633,11 +2673,14 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addGroup(jPanel45Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         engineering_dpt.add(jPanel45, java.awt.BorderLayout.CENTER);
 
+        jPanel5.add(engineering_dpt, "card14");
+
+        jPanelReport.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanelReport.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanelReport.add(jTextField42, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 150, 30));
 
@@ -2714,7 +2757,10 @@ public class ExportAndImport extends javax.swing.JFrame {
         jButton24.setText("Click to view Details");
         jPanelReport.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, 150, -1));
 
+        jPanel5.add(jPanelReport, "card15");
+
         jPanelIDF.setForeground(new java.awt.Color(51, 51, 55));
+        jPanelIDF.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanelIDF.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
@@ -2826,6 +2872,10 @@ public class ExportAndImport extends javax.swing.JFrame {
         jLabel58.setText("Invoice No");
         jPanelIDF.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 60, 30));
         jPanelIDF.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 130, 30));
+
+        jPanel5.add(jPanelIDF, "card16");
+
+        jPanelBom.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jPanel41.setBorder(javax.swing.BorderFactory.createTitledBorder("Bill Of Materials"));
 
@@ -3041,8 +3091,12 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanelBomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelBomLayout.createSequentialGroup()
                 .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
+
+        jPanel5.add(jPanelBom, "card17");
+
+        jPanelrough.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jTextField8.setEditable(false);
 
@@ -3067,19 +3121,19 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addGroup(jPanelroughLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel87)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(1322, Short.MAX_VALUE))
+                .addContainerGap(1058, Short.MAX_VALUE))
             .addGroup(jPanelroughLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelroughLayout.createSequentialGroup()
                     .addGap(362, 362, 362)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1068, Short.MAX_VALUE)))
+                    .addContainerGap(804, Short.MAX_VALUE)))
             .addGroup(jPanelroughLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelroughLayout.createSequentialGroup()
                     .addGap(337, 337, 337)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1043, Short.MAX_VALUE)))
+                    .addContainerGap(779, Short.MAX_VALUE)))
         );
         jPanelroughLayout.setVerticalGroup(
             jPanelroughLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3092,22 +3146,25 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addGroup(jPanelroughLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(867, Short.MAX_VALUE))
+                .addContainerGap(482, Short.MAX_VALUE))
             .addGroup(jPanelroughLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelroughLayout.createSequentialGroup()
                     .addGap(223, 223, 223)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(223, Short.MAX_VALUE)))
+                    .addContainerGap(300, Short.MAX_VALUE)))
             .addGroup(jPanelroughLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelroughLayout.createSequentialGroup()
                     .addGap(223, 223, 223)
                     .addGroup(jPanelroughLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(223, Short.MAX_VALUE)))
+                    .addContainerGap(300, Short.MAX_VALUE)))
         );
 
+        jPanel5.add(jPanelrough, "card18");
+
         AboveMarginCostPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Above margin Costing"));
+        AboveMarginCostPanel.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 
@@ -3280,7 +3337,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel24Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jScrollPane8)))
-                        .addGap(0, 257, Short.MAX_VALUE)))
+                        .addGap(0, 125, Short.MAX_VALUE)))
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3297,7 +3354,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                         .addGroup(jPanel24Layout.createSequentialGroup()
                             .addGap(14, 14, 14)
                             .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3325,7 +3382,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                                 .addComponent(jLabel93)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cost Comparison", jPanel24);
@@ -3429,7 +3486,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addGroup(jPanel25Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(519, Short.MAX_VALUE))
+                .addContainerGap(255, Short.MAX_VALUE))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3480,13 +3537,15 @@ public class ExportAndImport extends javax.swing.JFrame {
             AboveMarginCostPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AboveMarginCostPanelLayout.createSequentialGroup()
                 .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
+        jPanel5.add(AboveMarginCostPanel, "card19");
+
         bomProd_disp.setBorder(javax.swing.BorderFactory.createTitledBorder("BILL OF MATERIALS"));
-        bomProd_disp.setPreferredSize(new java.awt.Dimension(1010, 840));
+        bomProd_disp.setPreferredSize(new java.awt.Dimension(800, 600));
 
         jLabel141.setText("PRODUCT");
 
@@ -3653,7 +3712,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                                     .addComponent(jTextField108, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
                                     .addComponent(jTextField107))
                                 .addComponent(jTextField45, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(841, Short.MAX_VALUE))
+                .addContainerGap(577, Short.MAX_VALUE))
         );
         bomProd_dispLayout.setVerticalGroup(
             bomProd_dispLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3697,10 +3756,12 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addGroup(bomProd_dispLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton53)
                     .addComponent(jButton52))
-                .addGap(0, 314, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        MaincostPanel.setPreferredSize(new java.awt.Dimension(1024, 653));
+        jPanel5.add(bomProd_disp, "card20");
+
+        MaincostPanel.setPreferredSize(new java.awt.Dimension(800, 600));
         MaincostPanel.setLayout(new java.awt.BorderLayout());
 
         jPanel36.setBackground(new java.awt.Color(141, 110, 99));
@@ -3823,7 +3884,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addGroup(jPanel36Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addComponent(jLabel17)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
         jPanel36Layout.setVerticalGroup(
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3907,13 +3968,13 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel48.setLayout(jPanel48Layout);
         jPanel48Layout.setHorizontalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
+            .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 1212, Short.MAX_VALUE)
         );
         jPanel48Layout.setVerticalGroup(
             jPanel48Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel48Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -3950,7 +4011,7 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel46.setLayout(jPanel46Layout);
         jPanel46Layout.setHorizontalGroup(
             jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
+            .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 1212, Short.MAX_VALUE)
             .addGroup(jPanel46Layout.createSequentialGroup()
                 .addGap(420, 420, 420)
                 .addComponent(jButton48)
@@ -3972,7 +4033,7 @@ public class ExportAndImport extends javax.swing.JFrame {
 
         mainproduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "ID", "Product Name", "Quantity", "Batch/No", "Waste", "Monthly Hrs", "Seasonal Hrs", "Permanent Hrs", "Overtime Monthly", "Overtime Seasonal", "Overtime permanent", "Split Group"
@@ -4007,7 +4068,7 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel44.setLayout(jPanel44Layout);
         jPanel44Layout.setHorizontalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
+            .addComponent(jScrollPane25, javax.swing.GroupLayout.DEFAULT_SIZE, 1212, Short.MAX_VALUE)
             .addGroup(jPanel44Layout.createSequentialGroup()
                 .addGap(389, 389, 389)
                 .addComponent(jButton43)
@@ -4017,7 +4078,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jButton46)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton47)
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(542, Short.MAX_VALUE))
         );
         jPanel44Layout.setVerticalGroup(
             jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4046,22 +4107,25 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         MaincostPanel.add(jPanel33, java.awt.BorderLayout.CENTER);
 
+        jPanel5.add(MaincostPanel, "card21");
+
         ProductsalesPanel.setBackground(new java.awt.Color(153, 204, 255));
         ProductsalesPanel.setMinimumSize(new java.awt.Dimension(0, 0));
         ProductsalesPanel.setName(""); // NOI18N
+        ProductsalesPanel.setPreferredSize(new java.awt.Dimension(800, 600));
         ProductsalesPanel.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
         jPanel37Layout.setHorizontalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+            .addGap(0, 1232, Short.MAX_VALUE)
         );
         jPanel37Layout.setVerticalGroup(
             jPanel37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4098,7 +4162,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jButton67)
                 .addGap(18, 18, 18)
                 .addComponent(jButton68)
-                .addContainerGap(459, Short.MAX_VALUE))
+                .addContainerGap(352, Short.MAX_VALUE))
         );
 
         ProductsalesPanel.add(jPanel30, java.awt.BorderLayout.LINE_START);
@@ -4135,14 +4199,14 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane37, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
+                .addComponent(jScrollPane37, javax.swing.GroupLayout.DEFAULT_SIZE, 1059, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane37, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
+                .addComponent(jScrollPane37, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -4227,7 +4291,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                         .addComponent(jLabel183)
                         .addComponent(jTextField143, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
-                .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE))
+                .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE))
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4373,7 +4437,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                                         .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jsalesbuyer, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jbatchno, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addContainerGap(367, Short.MAX_VALUE))))
+                        .addContainerGap(499, Short.MAX_VALUE))))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4462,6 +4526,10 @@ public class ExportAndImport extends javax.swing.JFrame {
 
         ProductsalesPanel.add(jPanel31, java.awt.BorderLayout.CENTER);
 
+        jPanel5.add(ProductsalesPanel, "card22");
+
+        jTabbedPane3.setPreferredSize(new java.awt.Dimension(800, 600));
+
         jPanel42.setLayout(new java.awt.BorderLayout());
         jTabbedPane6.addTab("tab1", jPanel42);
 
@@ -4471,19 +4539,22 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel40.setLayout(jPanel40Layout);
         jPanel40Layout.setHorizontalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 975, Short.MAX_VALUE)
+            .addGap(0, 1227, Short.MAX_VALUE)
         );
         jPanel40Layout.setVerticalGroup(
             jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 482, Short.MAX_VALUE)
+            .addGap(0, 515, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Weekly report", jPanel40);
         jTabbedPane3.addTab("Above Margin productions", jTabbedPane4);
         jTabbedPane3.addTab("Monthly Summary Reports", jTabbedPane5);
 
+        jPanel5.add(jTabbedPane3, "card23");
+
         jPanelUsers.setMaximumSize(new java.awt.Dimension(500, 500));
         jPanelUsers.setMinimumSize(new java.awt.Dimension(500, 500));
+        jPanelUsers.setPreferredSize(new java.awt.Dimension(800, 600));
         jPanelUsers.setLayout(new java.awt.BorderLayout());
 
         jPanel52.setPreferredSize(new java.awt.Dimension(150, 530));
@@ -4506,7 +4577,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addGroup(jPanel52Layout.createSequentialGroup()
                 .addGroup(jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel52Layout.createSequentialGroup()
-                        .addContainerGap(23, Short.MAX_VALUE)
+                        .addContainerGap(25, Short.MAX_VALUE)
                         .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel52Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -4539,7 +4610,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jLabel136)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBox28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
 
         jPanelUsers.add(jPanel52, java.awt.BorderLayout.LINE_START);
@@ -4576,7 +4647,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addGroup(jPanel60Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 854, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
         jPanel60Layout.setVerticalGroup(
             jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4585,7 +4656,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jLabel131)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
@@ -4601,106 +4672,7 @@ public class ExportAndImport extends javax.swing.JFrame {
 
         jPanelUsers.add(jPanel59, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelReport, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelAdvancePayment, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(previousReception, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(past_and_sort_report, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(bomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(raw_material_reception, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelBom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Traceability, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Rawreception, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelrough, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelIDF, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelproforma, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(AboveMarginCostPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(bomProd_disp, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(MaincostPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1496, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(ProductsalesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addComponent(SummaryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1664, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 113, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(787, 787, 787)
-                    .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(engineering_dpt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 1326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanelUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 1259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelReport, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelAdvancePayment, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(previousReception, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(past_and_sort_report, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(bomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(raw_material_reception, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelBom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Traceability, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(Rawreception, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelExpense, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelrough, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelIDF, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanelproforma, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(AboveMarginCostPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(bomProd_disp, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(MaincostPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 928, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(ProductsalesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addComponent(SummaryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(448, 448, 448)
-                    .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(39, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(engineering_dpt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanelUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jPanel5.add(jPanelUsers, "card24");
 
         getContentPane().add(jPanel5, java.awt.BorderLayout.CENTER);
 
@@ -4773,7 +4745,7 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jButton6)
                 .addGap(18, 18, 18)
                 .addComponent(jButton23)
-                .addGap(0, 719, Short.MAX_VALUE))
+                .addGap(0, 334, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.LINE_START);
@@ -4784,7 +4756,7 @@ public class ExportAndImport extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1892, Short.MAX_VALUE)
+            .addGap(0, 1347, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
