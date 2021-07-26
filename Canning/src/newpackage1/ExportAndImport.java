@@ -183,6 +183,8 @@ public class ExportAndImport extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jComboBox22 = new javax.swing.JComboBox<>();
         jButton40 = new javax.swing.JButton();
+        jButton55 = new javax.swing.JButton();
+        jLabel111 = new javax.swing.JLabel();
         raw_material_reception = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
@@ -1051,12 +1053,21 @@ public class ExportAndImport extends javax.swing.JFrame {
 
         jComboBox22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "QUEST" }));
 
-        jButton40.setText("Preview");
+        jButton40.setText("Preview As Amounts");
         jButton40.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton40ActionPerformed(evt);
             }
         });
+
+        jButton55.setText("Preview As Cost");
+        jButton55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton55ActionPerformed(evt);
+            }
+        });
+
+        jLabel111.setText("Amount");
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
@@ -1073,7 +1084,11 @@ public class ExportAndImport extends javax.swing.JFrame {
                 .addComponent(jComboBox22, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jButton40)
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jButton55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel111)
+                .addContainerGap(177, Short.MAX_VALUE))
         );
         jPanel39Layout.setVerticalGroup(
             jPanel39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1084,7 +1099,9 @@ public class ExportAndImport extends javax.swing.JFrame {
                     .addComponent(jLabel16)
                     .addComponent(jLabel18)
                     .addComponent(jComboBox22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton40))
+                    .addComponent(jButton40)
+                    .addComponent(jButton55)
+                    .addComponent(jLabel111))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1358,7 +1375,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             .addGroup(raw_material_receptionLayout.createSequentialGroup()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE))
+                .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         raw_material_receptionLayout.setVerticalGroup(
             raw_material_receptionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1753,7 +1770,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 935, Short.MAX_VALUE)
             .addGroup(TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(Traceability_report, javax.swing.GroupLayout.DEFAULT_SIZE, 935, Short.MAX_VALUE))
+                .addComponent(Traceability_report))
         );
         TraceabilityLayout.setVerticalGroup(
             TraceabilityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4100,7 +4117,7 @@ public class ExportAndImport extends javax.swing.JFrame {
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE)
+                .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel33Layout.setVerticalGroup(
@@ -7347,6 +7364,7 @@ public class ExportAndImport extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable15KeyPressed
 
     private void jButton40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton40ActionPerformed
+jLabel111.setText("Amount");
         String monthel = (String) jComboBox21.getSelectedItem();
         String factoe = (String) jComboBox22.getSelectedItem();
         jTable16.addKeyListener(new KeyAdapter() {
@@ -7393,7 +7411,18 @@ public class ExportAndImport extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton40ActionPerformed
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
-        com.canning.reports.SummaryReport.PrintSummaryreport();        // TODO add your handling code here:
+        String aswaht=jLabel111.getText();
+        switch (aswaht){
+            case "Amount":
+                com.canning.reports.SummaryReport.PrintSummaryreport();        // TODO add your handling code here:
+                break;
+                
+            case "Cost":
+                com.canning.reports.SummaryReport.printSummaryasCost();
+                // TODO add your handling code here:
+                break;
+        }
+        
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void engdiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engdiesActionPerformed
@@ -7791,6 +7820,58 @@ public class ExportAndImport extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton43ActionPerformed
 
+    private void jButton55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton55ActionPerformed
+        jLabel111.setText("Cost");
+        String monthel = (String) jComboBox21.getSelectedItem();
+        String factoe = (String) jComboBox22.getSelectedItem();
+        jTable16.addKeyListener(new KeyAdapter() {
+//            @Override
+            public void keyPressed(KeyEvent evt) {
+                if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                    int powt = jTable16.getSelectedRow();
+                    String tableclickp = (jTable16.getModel().getValueAt(powt, 0).toString());
+                    NewJFrame.jTextField138.setText(tableclickp);
+                    prorptShow.productidReport();
+                    MainPanel.removeAll();
+                    MainPanel.add(NewJFrame.jPanel8);
+                    MainPanel.repaint();
+                    MainPanel.revalidate();
+                }
+            }
+        });
+        if (factoe.equals("All")) {
+            try {
+                String sql = "SELECT * from summary_cost"
+                        + " where monthname(date)=  '" + monthel + "'";
+                PreparedStatement pst = db_Connection.getInstance().prepareStatement(sql);
+                ResultSet rsses = pst.executeQuery();
+                jTable16.setModel(rsToTableModels.aboveMarginModel.buildTableModel(rsses));
+                rsses.close();
+                pst.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+//        monthprodcost.add(prodscroll);
+//        monthprodcost.repaint();
+//        monthprodcost.revalidate();        
+        } else {
+            try {
+                String sql = "SELECT * from summary_cost"
+                        + " where monthname(date)=  '" + monthel + "' and factory= '" + factoe + "'";
+                PreparedStatement pst = db_Connection.getInstance().prepareStatement(sql);
+                ResultSet rsses = pst.executeQuery();
+                jTable16.setModel(rsToTableModels.aboveMarginModel.buildTableModel(rsses));
+                rsses.close();
+                pst.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }      // TODO add your handling code here:
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton55ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -7919,6 +8000,7 @@ public class ExportAndImport extends javax.swing.JFrame {
     public static javax.swing.JButton jButton52;
     public static javax.swing.JButton jButton53;
     public static javax.swing.JButton jButton54;
+    private javax.swing.JButton jButton55;
     private javax.swing.JButton jButton6;
     public static javax.swing.JButton jButton61;
     public static javax.swing.JButton jButton67;
@@ -7987,6 +8069,7 @@ public class ExportAndImport extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
+    public static javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel12;
     public static javax.swing.JLabel jLabel124;
     public static javax.swing.JLabel jLabel125;

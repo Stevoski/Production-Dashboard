@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.10.0-unknown  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="newsubReport" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="32f31d3e-5411-4b07-9dbb-0e1244314de8">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Canning"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -58,108 +59,180 @@
 		</box>
 	</style>
 	<subDataset name="New Dataset 1" uuid="bc8244d0-0992-4821-9521-ad4cc4afc694">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Canning"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<parameter name="sbde" class="java.lang.Long"/>
 		<queryString>
-			<![CDATA[SELECT voucher_no,Production_ID,date,product,manpower,IngCost,RawCost,CanCost,LabelCost,EleCost,FuelCost,ManCost,Cperunit,quantity,waste_amount FROM new_view
+			<![CDATA[SELECT* from summary_cost
 where Production_ID=$P{sbde}
 group by Production_ID]]>
 		</queryString>
 		<field name="voucher_no" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="voucher_no"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 			<fieldDescription><![CDATA[]]></fieldDescription>
 		</field>
 		<field name="Production_ID" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="Production_ID"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 			<fieldDescription><![CDATA[]]></fieldDescription>
 		</field>
 		<field name="date" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.label" value="date"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="factory" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="factory"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
+		</field>
+		<field name="quantity" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 			<fieldDescription><![CDATA[]]></fieldDescription>
 		</field>
 		<field name="product" class="java.lang.String">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="manpower" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="product"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 			<fieldDescription><![CDATA[]]></fieldDescription>
 		</field>
 		<field name="IngCost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="IngCost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 			<fieldDescription><![CDATA[]]></fieldDescription>
 		</field>
 		<field name="RawCost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="RawCost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 			<fieldDescription><![CDATA[]]></fieldDescription>
 		</field>
-		<field name="CanCost" class="java.lang.Double">
-			<fieldDescription><![CDATA[]]></fieldDescription>
+		<field name="wasteCost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="wasteCost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		</field>
-		<field name="LabelCost" class="java.lang.Double">
-			<fieldDescription><![CDATA[]]></fieldDescription>
+		<field name="packagecost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="packagecost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		</field>
-		<field name="EleCost" class="java.lang.Double">
-			<fieldDescription><![CDATA[]]></fieldDescription>
+		<field name="eleCost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="eleCost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		</field>
-		<field name="FuelCost" class="java.lang.Double">
-			<fieldDescription><![CDATA[]]></fieldDescription>
+		<field name="fuelCost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="fuelCost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		</field>
-		<field name="ManCost" class="java.lang.Double">
-			<fieldDescription><![CDATA[]]></fieldDescription>
+		<field name="manCost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="manCost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
+		</field>
+		<field name="dieselCost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="dieselCost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		</field>
 		<field name="Cperunit" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="Cperunit"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 			<fieldDescription><![CDATA[]]></fieldDescription>
 		</field>
-		<field name="quantity" class="java.lang.Double">
-			<fieldDescription><![CDATA[]]></fieldDescription>
+		<field name="standard_cost" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="standard_cost"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		</field>
-		<field name="waste_amount" class="java.lang.Double">
-			<fieldDescription><![CDATA[]]></fieldDescription>
+		<field name="deviation" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="deviation"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
+		</field>
+		<field name="selling price" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="selling price"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		</field>
 	</subDataset>
 	<parameter name="fupr" class="java.lang.Long"/>
 	<queryString>
-		<![CDATA[SELECT voucher_no,Production_ID,date,product,manpower,IngCost,RawCost,CanCost,LabelCost,EleCost,FuelCost,ManCost,Cperunit,quantity,waste_amount FROM new_view 
+		<![CDATA[SELECT* from summary_cost
 where Production_ID=$P{fupr}
 order by Production_ID]]>
 	</queryString>
 	<field name="voucher_no" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="voucher_no"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="Production_ID" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Production_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="factory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="factory"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
+	</field>
+	<field name="quantity" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="product" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="manpower" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="product"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="IngCost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="IngCost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="RawCost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="RawCost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="CanCost" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="wasteCost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="wasteCost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 	</field>
-	<field name="LabelCost" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="packagecost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="packagecost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 	</field>
-	<field name="EleCost" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="eleCost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="eleCost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 	</field>
-	<field name="FuelCost" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="fuelCost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="fuelCost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 	</field>
-	<field name="ManCost" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="manCost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="manCost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
+	</field>
+	<field name="dieselCost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="dieselCost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 	</field>
 	<field name="Cperunit" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="Cperunit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="quantity" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="standard_cost" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="standard_cost"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 	</field>
-	<field name="waste_amount" class="java.lang.Double">
-		<fieldDescription><![CDATA[]]></fieldDescription>
+	<field name="deviation" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="deviation"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
+	</field>
+	<field name="selling price" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="selling price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="summary_cost"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -190,7 +263,8 @@ order by Production_ID]]>
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
 					<jr:column width="40" uuid="0709a248-179d-4dac-93ce-c1ef1c9e22dd">
-						<jr:tableHeader style="Table_TH" height="30">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="40" height="30" uuid="09c59afe-9cec-4e75-8e23-b336641a9abb"/>
 								<text><![CDATA[Pid]]></text>
@@ -204,7 +278,8 @@ order by Production_ID]]>
 						</jr:detailCell>
 					</jr:column>
 					<jr:column width="50" uuid="b9ef39fb-b618-478d-8e44-5d0f751e5518">
-						<jr:tableHeader style="Table_TH" height="30">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="50" height="30" uuid="eba94780-2560-4358-884a-2f1995bb8423"/>
 								<text><![CDATA[Date]]></text>
@@ -217,8 +292,24 @@ order by Production_ID]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
+					<jr:column width="40" uuid="ce7d07fa-752b-47f7-ad1b-552acd18800b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="5e709607-e518-4a39-969c-884852aa0806"/>
+								<text><![CDATA[Factory]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="013b5fd5-6012-43b6-9000-27c48f8d7507"/>
+								<textFieldExpression><![CDATA[$F{factory}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
 					<jr:column width="110" uuid="98f5b072-f6c0-42fe-a297-5be7703ef2ca">
-						<jr:tableHeader style="Table_TH" height="30">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="110" height="30" uuid="2fc58729-fa54-4e4e-9aff-b65580044356"/>
 								<text><![CDATA[Product]]></text>
@@ -231,120 +322,129 @@ order by Production_ID]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="50" uuid="1e43d92d-cd51-450a-9799-6a435915b9d8">
-						<jr:tableHeader style="Table_TH" height="30">
+					<jr:column width="60" uuid="059d0134-0a9c-4b27-bed6-dfd9676f71dd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="50" height="30" uuid="b05aa013-326c-4297-ab30-7cc91f3d8edb"/>
-								<text><![CDATA[Mancost]]></text>
+								<reportElement x="0" y="0" width="60" height="30" uuid="58103aee-3300-4be2-a6cd-af78d16d8145"/>
+								<text><![CDATA[Qty]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="50" height="30" uuid="cff0ad03-d6fa-4d87-9348-a35ebe936489"/>
-								<textFieldExpression><![CDATA[$F{manpower}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="60" height="30" uuid="ce8f2d5a-82dc-474a-95b9-f7f50b6aa5d0"/>
+								<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="60" uuid="6650e59d-8bb2-450c-91e3-445ebc82269f">
-						<jr:tableHeader style="Table_TH" height="30">
+					<jr:column width="40" uuid="6650e59d-8bb2-450c-91e3-445ebc82269f">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="30e7a14f-38ba-4a8a-8719-5837f2fd1a98"/>
+								<reportElement x="0" y="0" width="40" height="30" uuid="30e7a14f-38ba-4a8a-8719-5837f2fd1a98"/>
 								<text><![CDATA[Ingcost]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="bb72cc7e-d3a4-404e-ae6b-6a9aad9a66cf"/>
+								<reportElement x="0" y="0" width="40" height="30" uuid="bb72cc7e-d3a4-404e-ae6b-6a9aad9a66cf"/>
 								<textFieldExpression><![CDATA[$F{IngCost}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="60" uuid="d4bb20e9-87c8-4218-8b32-4dd277cf4ad8">
-						<jr:tableHeader style="Table_TH" height="30">
+					<jr:column width="50" uuid="d4bb20e9-87c8-4218-8b32-4dd277cf4ad8">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="e34e674f-9aa4-4b9c-981e-0cc89ef6108b"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="e34e674f-9aa4-4b9c-981e-0cc89ef6108b"/>
 								<text><![CDATA[Rawcost]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="05b9c6e6-ce40-4cfd-b00a-cbbc0c9237dc"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="05b9c6e6-ce40-4cfd-b00a-cbbc0c9237dc"/>
 								<textFieldExpression><![CDATA[$F{RawCost}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="60" uuid="721f49eb-0519-468a-9aad-781beec1b24e">
-						<jr:tableHeader style="Table_TH" height="30">
+					<jr:column width="50" uuid="721f49eb-0519-468a-9aad-781beec1b24e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="81888040-158a-4d92-aeae-2eac84cfb035"/>
-								<text><![CDATA[Cancost]]></text>
+								<reportElement x="0" y="0" width="50" height="30" uuid="81888040-158a-4d92-aeae-2eac84cfb035"/>
+								<text><![CDATA[package cost]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="921bf855-a602-4572-acbf-73c43ccea86c"/>
-								<textFieldExpression><![CDATA[$F{CanCost}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="50" height="30" uuid="7160265a-28a4-4140-ba4f-da1b26945652"/>
+								<textFieldExpression><![CDATA[$F{packagecost}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
 					<jr:column width="50" uuid="3d87afea-db6f-4484-b60b-aa3638429647">
-						<jr:tableHeader style="Table_TH" height="30">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="50" height="30" uuid="b8d48f16-56d2-4277-aafe-b29d6ef7802a"/>
-								<text><![CDATA[Labelcost]]></text>
+								<text><![CDATA[Waste Cost]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="50" height="30" uuid="a24901af-e35b-4366-a019-a165060413f4"/>
-								<textFieldExpression><![CDATA[$F{LabelCost}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="50" height="30" uuid="c92c62e9-cd72-4577-a047-2cb816a7a842"/>
+								<textFieldExpression><![CDATA[$F{wasteCost}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="60" uuid="0c48192d-c7ad-40f3-9872-dc97686dc89d">
-						<jr:tableHeader style="Table_TH" height="30">
+					<jr:column width="50" uuid="0c48192d-c7ad-40f3-9872-dc97686dc89d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column10"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="9d959e79-3a4c-410d-85e8-290a11d6319a"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="9d959e79-3a4c-410d-85e8-290a11d6319a"/>
 								<text><![CDATA[Elecost]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="4289faa6-0ab6-4f83-9a21-a0a05420eb58"/>
-								<textFieldExpression><![CDATA[$F{EleCost}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="50" height="30" uuid="d0e0c43c-3f8c-4fc1-a797-021fc2d67f4e"/>
+								<textFieldExpression><![CDATA[$F{eleCost}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="60" uuid="7a834b5a-faf7-4176-9a0b-1292f74f15b0">
-						<jr:tableHeader style="Table_TH" height="30">
+					<jr:column width="50" uuid="7a834b5a-faf7-4176-9a0b-1292f74f15b0">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column11"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="3edee222-c66f-453b-ada6-d6fa0d1b595d"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="3edee222-c66f-453b-ada6-d6fa0d1b595d"/>
 								<text><![CDATA[Fuelcost]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="f27168c9-2f2c-431a-846a-0a8e7b6d444e"/>
-								<textFieldExpression><![CDATA[$F{FuelCost}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="50" height="30" uuid="b63684b0-0366-41b9-a5c1-893eb90ada68"/>
+								<textFieldExpression><![CDATA[$F{fuelCost}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="60" uuid="c459f701-4001-4836-9467-68b47bb5d81b">
-						<jr:tableHeader style="Table_TH" height="30">
+					<jr:column width="50" uuid="c459f701-4001-4836-9467-68b47bb5d81b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column12"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="f6424777-2a07-4783-bb9f-99582ae621b5"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="f6424777-2a07-4783-bb9f-99582ae621b5"/>
 								<text><![CDATA[Mancost]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="5bf49407-5132-4ac0-ab70-43e458f529f5"/>
-								<textFieldExpression><![CDATA[$F{ManCost}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="50" height="30" uuid="4f8146a1-9100-4b27-a40a-6c80d2257022"/>
+								<textFieldExpression><![CDATA[$F{manCost}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
 					<jr:column width="50" uuid="23489d11-641c-4da7-a6de-acde8fed5879">
-						<jr:tableHeader style="Table_TH" height="30">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column13"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="50" height="30" uuid="d3454fa9-f6d7-49a0-82a9-db5dfa47ac94"/>
 								<textElement>
@@ -363,17 +463,33 @@ order by Production_ID]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="60" uuid="059d0134-0a9c-4b27-bed6-dfd9676f71dd">
-						<jr:tableHeader style="Table_TH" height="30">
+					<jr:column width="40" uuid="893b9167-90df-4c92-97b4-385f67e5a094">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column14"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="58103aee-3300-4be2-a6cd-af78d16d8145"/>
-								<text><![CDATA[Qty]]></text>
+								<reportElement x="0" y="0" width="40" height="30" uuid="63b2e11c-d76a-4da5-9193-1df10e1dde4f"/>
+								<text><![CDATA[Standard Cost]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="ce8f2d5a-82dc-474a-95b9-f7f50b6aa5d0"/>
-								<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="40" height="30" uuid="189fc98d-379e-4d02-83c4-02f61d951f98"/>
+								<textFieldExpression><![CDATA[$F{standard_cost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="3ab79da5-5694-45cf-885e-68391bbaf6da">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column15"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="937a0b30-fbdb-4fe1-9619-ef52448d9883"/>
+								<text><![CDATA[Selling Price]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="b1a789c7-e102-4ee0-b08f-f868581a03c5"/>
+								<textFieldExpression><![CDATA[$F{selling price}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>

@@ -107,4 +107,70 @@ public class SummaryReport {
         }
 
     }
+
+    public static void printSummaryasCost() {
+        String monthel = (String) jComboBox21.getSelectedItem();
+        String factoe = (String) jComboBox22.getSelectedItem();
+        if (factoe.equals("All")) {
+            try {
+                Connection connn = (Connection) db_Connection.getInstance();//                JasperDesign jd = JRXmlLoader.load("C:\\Users\\Stevoski\\Documents\\Scanned Documents\\Canning\\src\\CostReport.jrxml");
+                JasperDesign jd = JRXmlLoader.load("C:\\Program Files\\Cost\\newReport.jrxml");
+                JasperDesign subjd = JRXmlLoader.load("C:\\Program Files\\Cost\\newsubReport.jrxml");
+                String sql = "select * from summary_cost where monthname(date)=  '" + monthel + "'";
+                JRDesignQuery NewQuery = new JRDesignQuery();
+                NewQuery.setText(sql);
+                jd.setQuery(NewQuery);
+                JasperReport jr = JasperCompileManager.compileReport(jd);
+                JasperReport jsr = JasperCompileManager.compileReport(subjd);
+                Map<String, Object> paramsie = new HashMap<String, Object>();
+                paramsie.put("paramet1", jsr);
+                JasperPrint jp = JasperFillManager.fillReport(jr, paramsie, connn);
+//DISPLAY IN JPANEL
+                BorderLayout layoutPanel = new BorderLayout();
+                JPanel panelRPT = new JPanel(layoutPanel);
+                JRViewer vw = new JRViewer(jp);
+                panelRPT.setLayout(new BorderLayout());
+                panelRPT.repaint();
+                panelRPT.add(vw);
+                panelRPT.revalidate();
+                MainPanel.removeAll();
+                MainPanel.add(panelRPT);
+                MainPanel.repaint();
+                MainPanel.revalidate();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                Connection connn = (Connection) db_Connection.getInstance();//                JasperDesign jd = JRXmlLoader.load("C:\\Users\\Stevoski\\Documents\\Scanned Documents\\Canning\\src\\CostReport.jrxml");
+                JasperDesign jd = JRXmlLoader.load("C:\\Program Files\\Cost\\newReport.jrxml");
+                JasperDesign subjd = JRXmlLoader.load("C:\\Program Files\\Cost\\newsubReport.jrxml");
+                String sql = "select * from summary_cost where monthname(date)=  '" + monthel + "' and factory= '" + factoe + "'";
+                JRDesignQuery NewQuery = new JRDesignQuery();
+                NewQuery.setText(sql);
+                jd.setQuery(NewQuery);
+                JasperReport jr = JasperCompileManager.compileReport(jd);
+                JasperReport jsr = JasperCompileManager.compileReport(subjd);
+                Map<String, Object> paramsie = new HashMap<String, Object>();
+                paramsie.put("paramet1", jsr);
+                JasperPrint jp = JasperFillManager.fillReport(jr, paramsie, connn);
+//DISPLAY IN JPANEL
+                BorderLayout layoutPanel = new BorderLayout();
+                JPanel panelRPT = new JPanel(layoutPanel);
+                JRViewer vw = new JRViewer(jp);
+                panelRPT.setLayout(new BorderLayout());
+                panelRPT.repaint();
+                panelRPT.add(vw);
+                panelRPT.revalidate();
+                MainPanel.removeAll();
+                MainPanel.add(panelRPT);
+                MainPanel.repaint();
+                MainPanel.revalidate();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
 }

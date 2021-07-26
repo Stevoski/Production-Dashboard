@@ -29,9 +29,12 @@ import static newpackage1.NewJFrame.jDateChooser2;
 import static newpackage1.NewJFrame.jDateChooser3;
 import static newpackage1.NewJFrame.jRadioButton8;
 import static newpackage1.NewJFrame.jRadioButton9;
+import static newpackage1.NewJFrame.jRadioButton20;
+import static newpackage1.NewJFrame.jTextField138;
 import static newpackage1.NewJFrame.jTextField89;
 import static newpackage1.NewJFrame.jRadioButton13;
 import static newpackage1.NewJFrame.jTextLogin;
+import static newpackage1.NewJFrame.jTextField9;
 import newpackage1.db_Connection;
 //jTextLogin.getText()
 
@@ -48,6 +51,8 @@ public class Panel8Proreport {
         String prt2 = ((JTextField) jDateChooser3.getDateEditor().getUiComponent()).getText();
         String access = jTextLogin.getText();
           String Disppl = jTextField89.getText();
+          String vouch = jTextField9.getText();
+           String pidsa = jTextField138.getText();
         if ("ADMINISTRATOR".equals(jTextLogin.getText())) {
             try {
                 if (jRadioButton8.isSelected() == true) {
@@ -101,7 +106,7 @@ String sqlie = " SELECT   "
 "        LEFT JOIN `neview` ON (((`neview`.`voucher_no` = `costingprodn`.`voucher_no`)\n" +
 "            AND (`neview`.`ProductionID`=`prodpriceinclusive`.`ProductionID`)))) \n" 
        
-        + "                  where `prodpriceinclusive`.`ProductionID` ='" + Disppl + "' \n"
+        + "                  where `prodpriceinclusive`.`voucher_no` ='" + vouch + "' \n"
        
         + "    GROUP BY `neview`.`voucher_no`,`neview`.`ProductionID`  ";
 JRDesignQuery NewQuery = new JRDesignQuery();
@@ -147,9 +152,10 @@ MainPanel.revalidate();
 //                        JasperDesign jd = JRXmlLoader.load("C:\\Program Files (x86)\\Cost\\DatebtwnReport.jrxml");
 //                        JasperDesign SUBjd = JRXmlLoader.load("C:\\Program Files (x86)\\Cost\\DatebtwnReport_subreport2.jrxml");
 //32 BIT OS
-
-JasperDesign jd = JRXmlLoader.load("C:\\Program Files\\Cost\\DatebtwnReport.jrxml");
+ JasperDesign jd = JRXmlLoader.load("C:\\Program Files\\Cost\\production_to_cost.jrxml");
 JasperDesign SUBjd = JRXmlLoader.load("C:\\Program Files\\Cost\\DatebtwnReport_subreport2.jrxml");
+JasperDesign SUBjd1 = JRXmlLoader.load("C:\\Program Files\\Cost\\production_to_cost_subreport.jrxml");
+
 String sqlie = "  SELECT \n" +
 "        `costingprodn`.`voucher_no` AS `voucher_no`,\n" +
 "        `costingprodn`.`production_id` AS `production_id`,\n" +
@@ -181,6 +187,7 @@ String sqlie = "  SELECT \n" +
          " `costingprodn`.`briquette` AS `briquette`,\n" +
        " `costingprodn`.`briquetteamount` AS `briquetteamount`,\n" +
        " `costingprodn`.`diesel` AS `diesel`,\n" +
+        "`neview`.ingredient_price AS ingredient_price,\n" +
        " `costingprodn`.`dieselamount` AS `dieselamount`\n" +
 "    FROM\n" +
 "        ((((`costingprodn`\n" +
@@ -199,9 +206,13 @@ NewQuery.setText(sqlie);
 jd.setQuery(NewQuery);
 JasperReport jr = JasperCompileManager.compileReport(jd);
 JasperReport jsr = JasperCompileManager.compileReport(SUBjd);
+JasperReport jsr1 = JasperCompileManager.compileReport(SUBjd1);
+
 Map<String, Object> paramsi = new HashMap<String, Object>();
 //                Map<String, Object> params = new HashMap<>()<String, Object()>;
 paramsi.put("par1", jsr);
+paramsi.put("propard", jsr1);
+
 
 JasperPrint jp = JasperFillManager.fillReport(jr, paramsi, connn1);
 // paramsi.put("par1", jsr);
@@ -232,18 +243,11 @@ MainPanel.revalidate();
                     try {
                       
                         Connection connn3 = (Connection) db_Connection.getInstance();
-                        
-//                        JasperDesign jd = JRXmlLoader.load("C:\\Users\\Stevoski\\Documents\\Scanned Documents\\Canning\\src\\CostReport.jrxml");
-//                        JasperDesign SUBjd = JRXmlLoader.load("C:\\Program Files (x86)\\Cost\\DatebtwnReport_subreport2.jrxml");
-//                  64BIT OS
-//                        JasperDesign jd = JRXmlLoader.load("C:\\Program Files (x86)\\Cost\\DatebtwnReport.jrxml");
-//                        JasperDesign SUBjd = JRXmlLoader.load("C:\\Program Files (x86)\\Cost\\DatebtwnReport_subreport2.jrxml");
-//                  32BIT OS
-JasperDesign jd = JRXmlLoader.load("C:\\Program Files\\Cost\\DatebtwnReport.jrxml");
+               
+ JasperDesign jd = JRXmlLoader.load("C:\\Program Files\\Cost\\production_to_cost.jrxml");
 JasperDesign SUBjd = JRXmlLoader.load("C:\\Program Files\\Cost\\DatebtwnReport_subreport2.jrxml");
-//                InputStream jrM1 = getClass().getResourceAsStream("DatetwnReport.jasper");
-//                InputStream jSr1 = getClass().getResourceAsStream("DatebtwnReport_rawsubreport.jasper");
-//                JasperDesign jd = JRXmlLoader.load(jrM1);
+JasperDesign SUBjd1 = JRXmlLoader.load("C:\\Program Files\\Cost\\production_to_cost_subreport.jrxml");
+
 String sqlie = "  SELECT \n" +
 "        `costingprodn`.`voucher_no` AS `voucher_no`,\n" +
 "        `costingprodn`.`production_id` AS `production_id`,\n" +
@@ -263,6 +267,7 @@ String sqlie = "  SELECT \n" +
 "        `costingprodn`.`fuel` AS `fuel`,\n" +
 "        `ingredpriceinc`.`ingredient_name` AS `ingredient`,\n" +
 "        `ingredpriceinc`.`ingredient_qty` AS `ing_qty`,\n" +
+        "`neview`.ingredient_price AS ingredient_price,\n" +
 "        `ingredpriceinc`.`amount` AS `amount`,\n" +
 "        `rawmatpriceinc`.`raw_material` AS `raw_material`,\n" +
 "        `rawmatpriceinc`.`qty` AS `raw_material_qty`,\n" +
@@ -293,13 +298,13 @@ NewQuery.setText(sqlie);
 jd.setQuery(NewQuery);
 
 JasperReport jasperMasterReport = JasperCompileManager.compileReport(jd);
-
 JasperReport jsr = JasperCompileManager.compileReport(SUBjd);
+JasperReport jsr1 = JasperCompileManager.compileReport(SUBjd1);
+
 Map<String, Object> paramsi = new HashMap<String, Object>();
 //                Map<String, Object> params = new HashMap<>()<String, Object()>;
 paramsi.put("par1", jsr);
-
-//JasperFillManager.fillReportToFile(jasperMasterReport, parameters, connn);
+paramsi.put("propard", jsr1);//JasperFillManager.fillReportToFile(jasperMasterReport, parameters, connn);
 JasperPrint jp = JasperFillManager.fillReport(jasperMasterReport, paramsi, connn3);
 
 //DISPLAY IN JPANEL
@@ -327,6 +332,92 @@ MainPanel.revalidate();
                 JOptionPane.showMessageDialog(null, e.getMessage());
                 e.printStackTrace();
             }
+            if (jRadioButton20.isSelected() == true) {
+                    try {                        
+                        Connection connn = (Connection) db_Connection.getInstance();
+        JasperDesign jd = JRXmlLoader.load("C:\\Program Files\\Cost\\production_to_cost.jrxml");
+JasperDesign SUBjd = JRXmlLoader.load("C:\\Program Files\\Cost\\DatebtwnReport_subreport2.jrxml");
+JasperDesign SUBjd1 = JRXmlLoader.load("C:\\Program Files\\Cost\\production_to_cost_subreport.jrxml");
+String sqlie = " SELECT   "
+        + "`costingprodn`.`voucher_no` AS `voucher_no`,\n" +
+"        `costingprodn`.`production_id` AS `production_id`,\n" +
+"        `prodpriceinclusive`.`date` AS `date`,\n" +
+"        `prodpriceinclusive`.`factory` AS `factory`,\n" +
+"        `prodpriceinclusive`.`groupe` AS `groupe`,\n" +
+"        `prodpriceinclusive`.`product_name` AS `product_name`,\n" +
+"      (`prodpriceinclusive`.`quantity`) AS `quantity`,\n" +
+"        `prodpriceinclusive`.`quantityKGS` AS `quantityKGS`,\n" +
+"    `prodpriceinclusive`.`waste` AS `waste`,\n" +
+"        `costingprodn`.`electricity` AS `electricity`,\n" +
+"        `costingprodn`.`can_name` AS `can`,\n" +
+"        `costingprodn`.`no_of_cans` AS `no of can`,\n" +
+"        `costingprodn`.`label_name` AS `label`,\n" +
+"        `costingprodn`.`no_of_labels` AS `no of labels`,\n" +
+"        `prodpriceinclusive`.`manpower_hrs` AS `manpower_hrs`,\n" +
+"        `costingprodn`.`fuel` AS `fuel`,\n" +
+"        `ingredpriceinc`.`ingredient_name` AS `ingredient`,\n" +
+"        `ingredpriceinc`.`ingredient_qty` AS `ing_qty`,\n" +
+"        `ingredpriceinc`.`amount` AS `amount`,\n" +
+"        `rawmatpriceinc`.`raw_material` AS `raw_material`,\n" +
+"        `rawmatpriceinc`.`qty` AS `raw_material_qty`,\n" +
+"        `rawmatpriceinc`.`amount` AS `raw_material_amount`,\n" +
+"   `costingprodn`.`remarks` AS `remarks`,\n" +
+"        `neview`.`ingredient` AS `roomo`,\n" +
+"        `neview`.`ing_qty` AS `qoatoo`,\n" +
+"	sum(distinct  `neview`.`ing_qty`) as `total qty`,\n" +
+" `costingprodn`.`can_waste` AS `can_waste`,\n" +
+"  `costingprodn`.`briquette` AS `briquette`,\n" +
+"        `costingprodn`.`briquetteamount` AS `briquetteamount`,\n" +
+"        `costingprodn`.`diesel` AS `diesel`,\n" +
+"         `neview`.ingredient_price AS ingredient_price,\n" +
+"        `costingprodn`.`dieselamount` AS `dieselamount` "+       
+"    FROM\n" +
+"        ((((`costingprodn`\n" +
+"        LEFT JOIN `prodpriceinclusive` ON (((`prodpriceinclusive`.`voucher_no` = `costingprodn`.`voucher_no`)\n" +
+"            AND (`costingprodn`.`production_id` = `prodpriceinclusive`.`ProductionID`))))\n" +
+"        LEFT JOIN `ingredpriceinc` ON (((`ingredpriceinc`.`voucher_no` = `costingprodn`.`voucher_no`)\n" +
+"            AND (`ingredpriceinc`.`ProductionID` = `prodpriceinclusive`.`ProductionID`))))\n" +
+"        LEFT JOIN `rawmatpriceinc` ON (((`rawmatpriceinc`.`voucher_no` = `costingprodn`.`voucher_no`)\n" +
+"            AND (`rawmatpriceinc`.`ProductionID` = `prodpriceinclusive`.`ProductionID`))))\n" +
+"        LEFT JOIN `neview` ON (((`neview`.`voucher_no` = `costingprodn`.`voucher_no`)\n" +
+"            AND (`neview`.`ProductionID`=`prodpriceinclusive`.`ProductionID`)))) \n" 
+       
+        + "                  where `prodpriceinclusive`.`ProductionID` ='" + pidsa + "' \n"
+               + "    GROUP BY `neview`.`voucher_no`,`neview`.`ProductionID`  ";
+JRDesignQuery NewQuery = new JRDesignQuery();
+NewQuery.setText(sqlie);
+jd.setQuery(NewQuery);
+
+JasperReport jasperMasterReport = JasperCompileManager.compileReport(jd);
+JasperReport jsr = JasperCompileManager.compileReport(SUBjd);
+JasperReport jsr1 = JasperCompileManager.compileReport(SUBjd1);
+
+Map<String, Object> paramsi = new HashMap<String, Object>();
+//                Map<String, Object> params = new HashMap<>()<String, Object()>;
+paramsi.put("par1", jsr);
+paramsi.put("propard", jsr1);
+
+JasperPrint jp = JasperFillManager.fillReport(jasperMasterReport, paramsi, connn);
+
+//DISPLAY IN JPANEL
+BorderLayout layoutPanel = new BorderLayout();
+JPanel panelRPTt = new JPanel(layoutPanel);
+JRViewer vw = new JRViewer(jp);
+panelRPTt.setLayout(new BorderLayout());
+panelRPTt.repaint();
+panelRPTt.add(vw);
+panelRPTt.revalidate();
+
+MainPanel.removeAll();
+MainPanel.add(panelRPTt);
+MainPanel.repaint();
+MainPanel.revalidate();
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e.getMessage());
+                        e.printStackTrace();
+                    }
+                }
         } else {
             try {
                 

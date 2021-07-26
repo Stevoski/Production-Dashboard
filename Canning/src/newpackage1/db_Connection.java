@@ -19,7 +19,7 @@ db_Connection() {
 if (conexion == null) {
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                conexion = DriverManager.getConnection("jdbc:mysql://192.168.1.190:3306/canning?allowMultiQueries=true&autoreconnect=true", "weru", "steve23741997");
+                conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/canning?allowMultiQueries=true&autoreconnect=true", "weru", "steve23741997");
 //                java.util.Properties connProperties = new java.util.Properties();
 //                connProperties.put(MYSQL_AUTO_RECONNECT, "true");
 //    connProperties.put(MYSQL_MAX_RECONNECTS, "4");
