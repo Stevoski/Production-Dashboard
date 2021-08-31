@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="525.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane prefHeight="227.0" prefWidth="416.0">
+               <children>
+                  <GridPane layoutX="42.0" layoutY="42.0" prefHeight="294.0" prefWidth="658.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <TableView layoutY="14.0" prefHeight="260.0" prefWidth="218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="Product" />
+                                        <TableColumn prefWidth="75.0" text="Actual Qty" />
+                                          <TableColumn prefWidth="75.0" text="Projected BOM Qty" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                        <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="1">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <TableView layoutY="28.0" prefHeight="260.0" prefWidth="217.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="Raw Material" />
+                                        <TableColumn prefWidth="75.0" text="Quantity" />
+                                          <TableColumn prefWidth="75.0" text="BOM Qty" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                        <SplitPane orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" GridPane.columnIndex="2">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <TableView layoutX="9.0" layoutY="14.0" prefHeight="260.0" prefWidth="217.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="Package" />
+                                        <TableColumn prefWidth="75.0" text="Qty" />
+                                          <TableColumn prefWidth="75.0" text="BOM Qty" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </center>
+         <top>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane layoutX="116.0" layoutY="14.0" prefHeight="214.0" prefWidth="658.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TableView prefHeight="200.0" prefWidth="658.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="cosfact" prefWidth="75.0" text="Factory" />
+                                    <TableColumn fx:id="cosprod" prefWidth="75.0" text="Product" />
+                                    <TableColumn fx:id="cosqty" prefWidth="82.0" text="Qty Processed" />
+                                    <TableColumn fx:id="cosraw" prefWidth="75.0" text="Raw Cost">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Cost" />
+                                          <TableColumn prefWidth="75.0" text="Standard" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="cospack" prefWidth="75.0" text="Pack Cost">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Cost" />
+                                          <TableColumn prefWidth="75.0" text="Standard" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="cosman" prefWidth="75.0" text="Man Cost">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Cost" />
+                                          <TableColumn prefWidth="75.0" text="Standard" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="cosfuel" prefWidth="75.0" text="Fuel Cost">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Cost" />
+                                          <TableColumn prefWidth="75.0" text="Standard" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="cosel" prefWidth="75.0" text="Ele Cost">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Cost" />
+                                          <TableColumn prefWidth="75.0" text="Standard" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="coover" prefWidth="75.0" text="Overheads">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Cost" />
+                                          <TableColumn prefWidth="75.0" text="Standard" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="coscost" prefWidth="75.0" text="Cost Per Unit">
+                                       <columns>
+                                          <TableColumn prefWidth="75.0" text="Cost" />
+                                          <TableColumn prefWidth="75.0" text="Standard" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="cosstd" prefWidth="75.0" text="Selling Price" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                     <top>
+                        <FlowPane alignment="CENTER" hgap="40.0" prefHeight="36.0" prefWidth="658.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Product" />
+                              <ComboBox prefWidth="150.0" />
+                              <Button mnemonicParsing="false" text="Load BOM" />
+                           </children>
+                        </FlowPane>
+                     </top>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="31.0" prefWidth="658.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="262.0" layoutY="5.0" mnemonicParsing="false" text="Button" />
+                  <Button layoutX="344.0" layoutY="5.0" mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
